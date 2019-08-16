@@ -2,6 +2,19 @@
 
 public class Player : MonoBehaviour, IPassenger
 {
+    //돈
+    public int money;
+    //포만감
+    public int satiety;
+    //수분
+    public int moisture;
+    //위생
+    public int hygiene;
+    //위험도
+    public int risk;
+    //만남
+    public bool meeting;
+
     public bool WantToGetOff { get; set; }
     public bool WantToGetIn { get; set; }
 
