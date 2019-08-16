@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class Agent : MonoBehaviour, IPassenger
 {
+    //반대방향
+    public bool isOpposite;
+    
     public bool WantToGetOff { get; set; }
     public bool WantToGetIn { get; set; }
-    
+    public bool IsOpposite => isOpposite;
+
     public void Init(Station station)
     {
         transform.SetParent(station.transform);
@@ -13,7 +17,7 @@ public class Agent : MonoBehaviour, IPassenger
         WantToGetIn = true;
         station.Enter(this);
     }
-    
+
     public void GetIn(Train train, Station station)
     {
         Debug.Log($"{name}이 {station.name} 에서 {train} 열차를 탐");
@@ -36,8 +40,12 @@ public class Agent : MonoBehaviour, IPassenger
         
         float randomDelay = Random.Range(8f, 10f) / (1f + GameManager.instance.RiskSum / 100f);
         Invoke(nameof(AgentGetOffDelay), randomDelay);
-        
-        
+
+        int random = Random.Range(0, 1);
+        if (random == 1)
+        {
+            isOpposite = !isOpposite;
+        }
     }
 
     public void OnBoarding(Train train, Station station)

@@ -85,6 +85,7 @@ public class Player : MonoBehaviour, IPassenger
 
     public bool WantToGetOff { get; set; }
     public bool WantToGetIn { get; set; }
+    public bool IsOpposite => isOpposite;
 
     void Start()
     {

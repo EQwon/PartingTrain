@@ -4855,6 +4855,11 @@ PrefabInstance:
       propertyPath: stations.Array.data[8]
       value: 
       objectReference: {fileID: 1650418547}
+    - target: {fileID: 5859746960526808235, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
+        type: 3}
+      propertyPath: branchLine
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b8548a5853a3bc47bdf88312a9ea18c, type: 3}
 --- !u!224 &781043218 stripped
@@ -10626,6 +10631,11 @@ PrefabInstance:
       propertyPath: stations.Array.data[8]
       value: 
       objectReference: {fileID: 1650418547}
+    - target: {fileID: 5859746960526808235, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
+        type: 3}
+      propertyPath: branchLine
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b8548a5853a3bc47bdf88312a9ea18c, type: 3}
 --- !u!1 &1611096547
@@ -13251,11 +13261,6 @@ PrefabInstance:
       propertyPath: canSnackVending
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4928413147873655093, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -13264,6 +13269,11 @@ PrefabInstance:
     - target: {fileID: 4928413147873655093, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6224550539369551213, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
