@@ -9,7 +9,7 @@ public class StationShower : MonoBehaviour
 
     public bool man;
 
-    public Button[] actionButtons = new Button[4];
+    private Button[] actionButtons = new Button[4];
 
     private void Start()
     {
@@ -35,6 +35,13 @@ public class StationShower : MonoBehaviour
         actionButtons[3].gameObject.SetActive(info.isSnackVending);
     }
 
+    public void HideAction()
+    {
+        for(int i = 0; i < actionButtons.Length; i++)
+        {
+            actionButtons[i].gameObject.SetActive(false);
+        }
+    }
 
     public void GoToToilet()
     {
