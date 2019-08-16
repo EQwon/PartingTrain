@@ -2,6 +2,8 @@
 
 public class Player : MonoBehaviour, IPassenger
 {
+    [SerializeField] Station startStation;
+    
     //돈
     public int money;
     //포만감
@@ -27,6 +29,11 @@ public class Player : MonoBehaviour, IPassenger
     public bool WantToGetOff { get; set; }
     public bool WantToGetIn { get; set; }
 
+    void Start()
+    {
+        Init(startStation);
+    }
+    
     public void Init(Station station)
     {
         WantToGetIn = true;

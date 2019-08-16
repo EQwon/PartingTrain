@@ -5,17 +5,18 @@ using UnityEngine;
 public class Train : MonoBehaviour
 {
     [SerializeField] List<Station> stations;
+    [SerializeField] bool reverse;
+    [SerializeField] bool branchLine;
 
     List<IPassenger> passengers = new List<IPassenger>();
 
-    public void Init(List<Station> stations)
-    {
-        this.stations = stations;
-        StartCoroutine(nameof(TrainUpdator));
-    }
-
     private void Start()
     {
+        if (reverse)
+        {
+            stations.Reverse();
+        }
+        
         StartCoroutine(nameof(TrainUpdator));
     }
 
@@ -33,6 +34,8 @@ public class Train : MonoBehaviour
         {
             if (stationQueue.Count <= 0)
             {
+                if(branchLine)
+                    stations.Reverse();
                 stationQueue = new Queue<Station>(stations);
             }
             
