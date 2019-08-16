@@ -21,6 +21,8 @@ public class Player : MonoBehaviour, IPassenger
     public bool isRiding;
     //반대방향
     public bool isOpposite;
+    //성별
+    public bool isMan;
 
     //역정보
     [HideInInspector]
@@ -51,6 +53,9 @@ public class Player : MonoBehaviour, IPassenger
         isRiding = true;
         stationInfo = null;
         station.Out(this);
+
+        int idx = isMan ? 0 : 1;
+        GameManager.instance.showers[idx].HideAction();
     }
 
     public void GetOff(Station station)
@@ -62,6 +67,9 @@ public class Player : MonoBehaviour, IPassenger
         isRiding = false;
         stationInfo = station;
         station.Enter(this);
+
+        int idx = isMan ? 0 : 1;
+        GameManager.instance.showers[idx].ShowAction();
     }
 
     public void OnBoarding(Train train, Station station)
