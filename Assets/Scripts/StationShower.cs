@@ -22,21 +22,43 @@ public class StationShower : MonoBehaviour
 
     public void GoToToilet()
     {
-        Debug.Log(info.name + "역에서 화장실에 갑니다.");
+        Player.instance.Toilet();
+        Debug.Log(info.stationName + "역에서 화장실");
     }
 
     public void Begging()
     {
-        Debug.Log(info.name + "역에서 Action 2");
+        Player.instance.Begging();
+        Debug.Log(info.stationName + "역에서 구걸");
     }
 
-    public void Action3()
+    public void Ride()
     {
-        Debug.Log(info.name + "역에서 Action 3");
+        Player.instance.GetIn();
+        Debug.Log(info.stationName + "역에서 탑승");
     }
 
-    public void Action4()
+    public void Quit()
     {
-        Debug.Log(info.name + "역에서 Action 4");
+        Player.instance.GetOut();
+        Debug.Log(info.stationName + "역에서 내림");
+    }
+
+    public void Beverage()
+    {
+        Player.instance.BeverageVendingMachine();
+        Debug.Log(info.stationName + "역에서 음료수");
+    }
+
+    public void Snack()
+    {
+        Player.instance.SnackVendingMachine();
+        Debug.Log(info.stationName + "역에서 과자");
+    }
+
+    public void Opposite()
+    {
+        Player.instance.Opposite();
+        Debug.Log(info.stationName + "역에서 반대방향");
     }
 }
