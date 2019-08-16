@@ -155,6 +155,11 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitForSeconds(1f);
 
             timeSpan += TimeSpan.FromMinutes(4);
+            
+            for(int i = 0; i <players.Length; i++)
+            {
+                players[i].risk -= DataInfo.lossRiskPerTime;
+            }
 
             text.text = string.Format("{0:00} : {1:00}", timeSpan.Hours, timeSpan.Minutes);
         }

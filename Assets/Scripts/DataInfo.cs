@@ -32,4 +32,6 @@ public static class DataInfo
     public const int beverageTime = 3;
     public const int snackTime = 3;
     public const int beggingTime = 3;
+
+    public const int lossRiskPerTime = 3;
 }

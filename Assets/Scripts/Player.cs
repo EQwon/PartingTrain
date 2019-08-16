@@ -3,17 +3,66 @@
 public class Player : MonoBehaviour, IPassenger
 {
     [SerializeField] Station startStation;
-    
+
     //돈
-    public int money;
+    public int money {
+        get { return money; }
+        set {
+            if (value <= 0)
+                value = 0;
+            else
+                money = value;
+        }
+    }
     //포만감
-    public int satiety;
+    public int satiety {
+        get { return satiety; }
+        set {
+            if (value >= 100)
+                satiety = value;
+            else if (value <= 0)
+                satiety = 0;
+            else
+                satiety = value;
+        }
+    }
     //수분
-    public int moisture;
+    public int moisture {
+        get { return moisture; }
+        set {
+            if (value >= 100)
+                moisture = 100;
+            else if (value <= 0)
+                moisture = 0;
+            else
+                moisture = value;
+        }
+    }
     //위생
-    public int hygiene;
+    public int hygiene {
+        get { return hygiene; }
+        set {
+            if(value >= 100)
+                hygiene = 100;
+            else if (value <= 0)
+                hygiene = 0;
+            else
+                hygiene = value;
+        }
+    }
     //위험도
-    public int risk;
+    public int risk {
+        get { return risk; }
+        set {
+            if (value >= 100)
+            { risk = 100; }
+            else if (value <= 0)
+            { risk = 0; }
+            else
+            { risk = value; }
+        }
+    }
+
 
     //만남
     public bool meeting;
