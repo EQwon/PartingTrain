@@ -58,7 +58,7 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        players[idx].risk += DataInfo.oppositeRisk;
+        players[idx].Risk += DataInfo.oppositeRisk;
         players[idx].isOpposite = !players[0].isOpposite;
 
         SpendTime(DataInfo.oppositeTime);
@@ -71,8 +71,8 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        players[idx].hygiene += DataInfo.toiletHygiene;
-        players[idx].risk += DataInfo.toiletRisk;
+        players[idx].Hygine += DataInfo.toiletHygiene;
+        players[idx].Risk += DataInfo.toiletRisk;
 
         SpendTime(DataInfo.toiletTime);
 
@@ -84,12 +84,12 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        players[idx].moisture += DataInfo.beverageVendingMachineMoisture;
-        players[idx].risk += DataInfo.beverageVendingMachineRisk;
+        players[idx].Moisture += DataInfo.beverageVendingMachineMoisture;
+        players[idx].Risk += DataInfo.beverageVendingMachineRisk;
 
         if (CanBuy(_isMan, DataInfo.beverageVendingMachineMoney))
         {
-            players[idx].money -= DataInfo.beverageVendingMachineMoney;
+            players[idx].Money -= DataInfo.beverageVendingMachineMoney;
         }
 
         SpendTime(DataInfo.beverageTime);
@@ -102,12 +102,12 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        players[idx].satiety += DataInfo.snackVendingMachineSatiety;
-        players[idx].risk += DataInfo.snackVendingMachineRisk;
+        players[idx].Satiety += DataInfo.snackVendingMachineSatiety;
+        players[idx].Risk += DataInfo.snackVendingMachineRisk;
 
         if (CanBuy(_isMan, DataInfo.snackVendingMachineMoney))
         {
-            players[idx].money -= DataInfo.snackVendingMachineMoney;
+            players[idx].Money -= DataInfo.snackVendingMachineMoney;
         }
 
         SpendTime(DataInfo.snackTime);
@@ -120,8 +120,8 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        players[idx].money += DataInfo.beggingMoney;
-        players[idx].risk += DataInfo.beggingRisk;
+        players[idx].Money += DataInfo.beggingMoney;
+        players[idx].Risk += DataInfo.beggingRisk;
 
         SpendTime(DataInfo.beggingTime);
 
@@ -132,7 +132,7 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        if(players[idx].money >= _cost)
+        if(players[idx].Money >= _cost)
         {
             return true;
         }
@@ -158,7 +158,7 @@ public class GameManager : Singleton<GameManager>
             
             for(int i = 0; i <players.Length; i++)
             {
-                players[i].risk -= DataInfo.lossRiskPerTime;
+                players[i].Risk -= DataInfo.lossRiskPerTime;
             }
 
             text.text = string.Format("{0:00} : {1:00}", timeSpan.Hours, timeSpan.Minutes);
