@@ -7,6 +7,7 @@ public class Train : MonoBehaviour
     [SerializeField] List<Station> stations;
     [SerializeField] bool reverse;
     [SerializeField] bool branchLine;
+    [SerializeField] float trainSpeed = 1f;
 
     List<IPassenger> passengers = new List<IPassenger>();
 
@@ -84,7 +85,7 @@ public class Train : MonoBehaviour
             }
 
             transform.position = Vector3.Lerp(currentStation.transform.position, nextStation.transform.position, timer);
-            timer += Time.deltaTime;
+            timer += Time.deltaTime * trainSpeed;
             yield return null;
         }
     }

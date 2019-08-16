@@ -1288,6 +1288,11 @@ PrefabInstance:
       propertyPath: stations.Array.data[42]
       value: 
       objectReference: {fileID: 190339970}
+    - target: {fileID: 4729529003006882243, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
+        type: 3}
+      propertyPath: trainSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b8548a5853a3bc47bdf88312a9ea18c, type: 3}
 --- !u!224 &260751147 stripped
@@ -4621,7 +4626,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016e906f385c2e54dbb61c31a124caa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 0}
   man: 1
 --- !u!114 &879890001
 MonoBehaviour:
@@ -8423,7 +8427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016e906f385c2e54dbb61c31a124caa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 0}
   man: 0
 --- !u!114 &1563270071
 MonoBehaviour:
@@ -8675,8 +8678,8 @@ MonoBehaviour:
   - {fileID: 636485987}
   - {fileID: 429509075}
   showers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 879890000}
+  - {fileID: 1563270070}
   text: {fileID: 683899261}
 --- !u!4 &1583080184
 Transform:

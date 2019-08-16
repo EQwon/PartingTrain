@@ -7,7 +7,7 @@ using System;
 public class GameManager : Singleton<GameManager>
 {
     public Player[] players = new Player[2];
-    public StationShower[] showers = new StationShower[2];
+    public StationShower[] showers;
 
     private float time;
 
