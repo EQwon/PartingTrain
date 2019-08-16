@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class StationShower : MonoBehaviour
 {
-    public Station info;
-
     public bool man;
 
     private Button[] actionButtons = new Button[5];
@@ -22,7 +20,7 @@ public class StationShower : MonoBehaviour
         actionButtons[4].onClick.AddListener(() => Quit());
     }
 
-    public void QuitAction()
+    public void QuitAction(Station info)
     {
         if(info == null)
         {
@@ -49,42 +47,35 @@ public class StationShower : MonoBehaviour
     public void GoToToilet()
     {
         GameManager.instance.Toilet(man);
-        Debug.Log(info.stationName + "역에서 화장실");
     }
 
     public void Begging()
     {
         GameManager.instance.Begging(man);
-        Debug.Log(info.stationName + "역에서 구걸");
     }
 
     public void Ride()
     {
         GameManager.instance.GetIn(man);
-        Debug.Log(info.stationName + "역에서 탑승");
     }
 
     public void Quit()
     {
         GameManager.instance.GetOut(man);
-        Debug.Log(info.stationName + "역에서 내림");
     }
 
     public void Beverage()
     {
         GameManager.instance.BeverageVendingMachine(man);
-        Debug.Log(info.stationName + "역에서 음료수");
     }
 
     public void Snack()
     {
         GameManager.instance.SnackVendingMachine(man);
-        Debug.Log(info.stationName + "역에서 과자");
     }
 
     public void Opposite()
     {
         GameManager.instance.Opposite(man);
-        Debug.Log(info.stationName + "역에서 반대방향");
     }
 }

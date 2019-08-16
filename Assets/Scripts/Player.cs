@@ -69,7 +69,7 @@ public class Player : MonoBehaviour, IPassenger
         station.Enter(this);
 
         int idx = isMan ? 0 : 1;
-        GameManager.instance.showers[idx].RideAction();
+        GameManager.instance.showers[idx].QuitAction(stationInfo);
     }
 
     public void OnBoarding(Train train, Station station)
