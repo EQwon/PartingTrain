@@ -23,6 +23,7 @@ public class Train : MonoBehaviour
 
     IEnumerator TrainUpdator()
     {
+        int count = 0;
         Queue<Station> stationQueue = new Queue<Station>(stations);
 
         if (stationQueue.Count <= 0)
@@ -35,20 +36,32 @@ public class Train : MonoBehaviour
         {
             if (stationQueue.Count <= 0)
             {
-                if(branchLine)
-                    stations.Reverse();
+                count = 0;
                 stationQueue = new Queue<Station>(stations);
             }
+
+            if (branchLine && (count == 0 || count == 4))
+                reverse = !reverse;
             
             Station nextStation = stationQueue.Dequeue();
+            count++;
 
             // 열차 출발 전
-            
+
             // 타고 싶은 승객들 태우기
             foreach (IPassenger passenger in currentStation.GetBoardingPassengers)
             {
-                passenger.GetIn(this, currentStation);
-                passengers.Add(passenger);
+
+                if (reverse && passenger.IsOpposite)
+                {
+                    passenger.GetIn(this, currentStation);
+                    passengers.Add(passenger);
+                }
+                else if (!reverse && !passenger.IsOpposite)
+                {
+                    passenger.GetIn(this, currentStation);
+                    passengers.Add(passenger);
+                }
             }
 
             yield return StartCoroutine(TrainMovementUpdator(currentStation, nextStation)); // 열차 출발
