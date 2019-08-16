@@ -6,27 +6,7 @@ using System;
 
 public class GameManager : Singleton<GameManager>
 {
-    //돈
-    public int money;
-    //포만감
-    public int satiety;
-    //수분
-    public int moisture;
-    //위생
-    public int hygiene;
-    //위험도
-    public int risk;
-
-    //만남
-    public bool meeting;
-    //탑승상황
-    public bool isRiding;
-    //반대방향
-    public bool isOpposite; 
-
-    //역정보
-    [HideInInspector]
-    public Station stationInfo;
+    public Player[] players;
 
     private float time;
 
@@ -43,87 +23,105 @@ public class GameManager : Singleton<GameManager>
     }
 
     //역 갱신
-    public void StationRefresh(Station _info, Action _finishAction = null)
+    public void StationRefresh(bool _isMan, Station _info, Action _finishAction = null)
     {
-        stationInfo = _info;
+        int idx = _isMan ? 0 : 1;
+
+        players[idx].stationInfo = _info;
+
         _finishAction?.Invoke();
     }
 
     //탑승
-    public void GetIn(Action _finishAction = null)
+    public void GetIn(bool _isMan, Action _finishAction = null)
     {
-        isRiding = true;
+        int idx = _isMan ? 0 : 1;
+
+        players[idx].isRiding = true;
 
         _finishAction?.Invoke();
     }
 
     //하차
-    public void GetOut(Action _finishAction = null)
+    public void GetOut(bool _isMan, Action _finishAction = null)
     {
-        isRiding = false;
+        int idx = _isMan ? 0 : 1;
+
+        players[idx].isRiding = false;
 
         _finishAction.Invoke();
     }
 
     //반대방향
-    public void Opposite(Action _finishAction = null)
+    public void Opposite(bool _isMan, Action _finishAction = null)
     {
-        risk += DataInfo.oppositeRisk;
+        int idx = _isMan ? 0 : 1;
 
-        isOpposite = !isOpposite;
+        players[idx].risk += DataInfo.oppositeRisk;
+        players[idx].isOpposite = !players[0].isOpposite;
 
         _finishAction?.Invoke();
     }
 
     //화장실
-    public void Toilet(Action _finishAction = null)
+    public void Toilet(bool _isMan, Action _finishAction = null)
     {
-        hygiene += DataInfo.toiletHygiene;
-        risk += DataInfo.toiletRisk;
+        int idx = _isMan ? 0 : 1;
+
+        players[idx].hygiene += DataInfo.toiletHygiene;
+        players[idx].risk = DataInfo.toiletRisk;
 
         _finishAction?.Invoke();
     }
 
     //음료수 자판기
-    public void BeverageVendingMachine(Action _finishAction = null)
+    public void BeverageVendingMachine(bool _isMan, Action _finishAction = null)
     {
-        moisture += DataInfo.beverageVendingMachineMoisture;
-        risk += DataInfo.beverageVendingMachineRisk;
+        int idx = _isMan ? 0 : 1;
 
-        if (CanBuy(DataInfo.beverageVendingMachineMoney))
+        players[idx].moisture += DataInfo.beverageVendingMachineMoisture;
+        players[idx].risk = DataInfo.beverageVendingMachineRisk;
+
+        if (CanBuy(_isMan, DataInfo.beverageVendingMachineMoney))
         {
-            money -= DataInfo.beverageVendingMachineMoney;
+            players[idx].money -= DataInfo.beverageVendingMachineMoney;
         }
 
         _finishAction?.Invoke();
     }
 
     //과자 자판기
-    public void SnackVendingMachine(Action _finishAction = null)
+    public void SnackVendingMachine(bool _isMan, Action _finishAction = null)
     {
-        satiety += DataInfo.snackVendingMachineSatiety;
-        risk += DataInfo.snackVendingMachineRisk;
+        int idx = _isMan ? 0 : 1;
 
-        if (CanBuy(DataInfo.snackVendingMachineMoney))
+        players[idx].satiety += DataInfo.snackVendingMachineSatiety;
+        players[idx].risk = DataInfo.snackVendingMachineRisk;
+
+        if (CanBuy(_isMan, DataInfo.snackVendingMachineMoney))
         {
-            money -= DataInfo.snackVendingMachineMoney;
+            players[idx].money -= DataInfo.snackVendingMachineMoney;
         }
 
         _finishAction?.Invoke();
     }
     
     //구걸
-    public void Begging(Action _finishAction = null)
+    public void Begging(bool _isMan, Action _finishAction = null)
     {
-        money += DataInfo.beggingMoney;
-        risk += DataInfo.beggingRisk;
+        int idx = _isMan ? 0 : 1;
+
+        players[idx].money += DataInfo.beggingMoney;
+        players[idx].risk = DataInfo.beggingRisk;
 
         _finishAction.Invoke();
     }
 
-    private bool CanBuy(int _cost)
+    private bool CanBuy(bool _isMan, int _cost)
     {
-        if(money >= _cost)
+        int idx = _isMan ? 0 : 1;
+
+        if(players[idx].money >= _cost)
         {
             return true;
         }
@@ -133,10 +131,10 @@ public class GameManager : Singleton<GameManager>
 
     private void CheckGameOver()
     {
-        if(satiety <= 0 || moisture <= 0 || hygiene <= 0)
-        {
-            Debug.Log("게임 오버");
-        }
+        //if(satiety <= 0 || moisture <= 0 || hygiene <= 0)
+        //{
+        //    Debug.Log("게임 오버");
+        //}
     }
 
     private IEnumerator DayClockCoroutine()
