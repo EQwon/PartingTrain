@@ -81,12 +81,14 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData _data)
     {
-        Show();
+        GameManager.instance.ShowStationInfo(this);
+        //Show();
     }
 
     public void OnPointerExit(PointerEventData _data)
     {
-        Hide();
+        GameManager.instance.HideStationInfo();
+        //Hide();
     }
     
     #endregion
