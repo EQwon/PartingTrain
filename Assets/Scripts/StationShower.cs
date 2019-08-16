@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class StationShower : MonoBehaviour
 {
-    public StationInfo info;
+    public Station info;
 
     public GameObject ActionBubble;
 

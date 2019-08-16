@@ -26,7 +26,7 @@ public class GameManager : Singleton<GameManager>
 
     //역정보
     [HideInInspector]
-    public StationInfo stationInfo;
+    public Station stationInfo;
 
     private float time;
 
@@ -43,7 +43,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     //역 갱신
-    public void StationRefresh(StationInfo _info, Action _finishAction = null)
+    public void StationRefresh(Station _info, Action _finishAction = null)
     {
         stationInfo = _info;
         _finishAction?.Invoke();
