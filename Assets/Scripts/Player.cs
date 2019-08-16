@@ -38,7 +38,6 @@ public class Player : MonoBehaviour, IPassenger
     
     public void Init(Station station)
     {
-        WantToGetIn = true;
         transform.SetParent(station.transform);
         transform.localPosition = Vector3.zero;
         station.Enter(this);
@@ -74,7 +73,7 @@ public class Player : MonoBehaviour, IPassenger
 
     public void OnBoarding(Train train, Station station)
     {
-        Debug.Log($"{name}은 {train.name}을 타고 {station}에 도착했음 (아직 내리지 않은 상태)");
+        Debug.Log($"{name}은 {train.name}을 타고 {station}에 도착했음 (아직 내리지 않은 상태) {WantToGetIn} {WantToGetOff}");
     }
 
 }

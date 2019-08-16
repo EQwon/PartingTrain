@@ -2387,7 +2387,7 @@ PrefabInstance:
     - target: {fileID: 4253920943231787914, guid: b04017028cedb534db350d7746f81ec4,
         type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Woman
       objectReference: {fileID: 0}
     - target: {fileID: 4253920943231787957, guid: b04017028cedb534db350d7746f81ec4,
         type: 3}
@@ -4853,7 +4853,7 @@ GameObject:
   - component: {fileID: 879890001}
   - component: {fileID: 879890000}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ManShower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8714,7 +8714,7 @@ GameObject:
   - component: {fileID: 1563270071}
   - component: {fileID: 1563270070}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: WomanShower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11720,6 +11720,11 @@ PrefabInstance:
       propertyPath: startStation
       value: 
       objectReference: {fileID: 1926328305}
+    - target: {fileID: 6044335803470932161, guid: b04017028cedb534db350d7746f81ec4,
+        type: 3}
+      propertyPath: isMan
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b04017028cedb534db350d7746f81ec4, type: 3}
 --- !u!1001 &9015602567355160997
