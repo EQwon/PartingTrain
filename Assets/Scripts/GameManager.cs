@@ -15,6 +15,20 @@ public class GameManager : Singleton<GameManager>
 
     public Text text;
 
+    public int RiskSum => players[0].Risk + players[1].Risk;
+    public int MaxAgent => (RiskSum / 20) + 1;
+
+    [SerializeField] Agent agentPrefab;
+    List<Agent> agents = new List<Agent>();
+    Station[] stations;
+
+
+    protected override void Awake()
+    {
+        base.Awake();
+        stations = FindObjectsOfType<Station>();
+    }
+    
     private void Start()
     {
         timeSpan = new TimeSpan();
@@ -161,6 +175,11 @@ public class GameManager : Singleton<GameManager>
                 players[i].Risk -= DataInfo.lossRiskPerTime;
             }
 
+            if (agents.Count < MaxAgent)
+            {
+                SpawnAgent();
+            }
+
             text.text = string.Format("{0:00} : {1:00}", timeSpan.Hours, timeSpan.Minutes);
         }
     }
@@ -168,5 +187,39 @@ public class GameManager : Singleton<GameManager>
     public void SpendTime(int _time)
     {
         timeSpan += TimeSpan.FromMinutes(4 * _time);
+    }
+
+    public void SpawnAgent()
+    {
+        Agent agent = Instantiate(agentPrefab);
+        agent.Init(GetRandomStationForAgentSpawn());
+        agents.Add(agent);
+    }
+
+    public void RemoveAgent(Agent agent)
+    {
+        agents.Remove(agent);
+        Destroy(agent);
+    }
+
+    public Station GetRandomStationForAgentSpawn()
+    {
+        while (true)
+        {
+            Station randomStation = stations[UnityEngine.Random.Range(0, stations.Length)];
+
+            bool isValid = true;
+            foreach (Player player in players)
+            {
+                float distance = Vector3.Distance(player.transform.position, randomStation.transform.position);
+                if (distance >= 200)
+                    continue;
+
+                isValid = false;
+            }
+
+            if (isValid)
+                return randomStation;
+        }
     }
 }

@@ -963,11 +963,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1144790499}
     m_Modifications:
-    - target: {fileID: 5859746960526808228, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
-        type: 3}
-      propertyPath: m_Name
-      value: LoopTrain
-      objectReference: {fileID: 0}
     - target: {fileID: 5367551564922994620, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
         type: 3}
       propertyPath: m_Name
@@ -1307,6 +1302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: trainSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859746960526808228, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
+        type: 3}
+      propertyPath: m_Name
+      value: LoopTrain
       objectReference: {fileID: 0}
     - target: {fileID: 5859746959185084936, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
         type: 3}
@@ -9345,6 +9345,8 @@ MonoBehaviour:
   - {fileID: 879890000}
   - {fileID: 1563270070}
   text: {fileID: 683899261}
+  agentPrefab: {fileID: 3367777758656592067, guid: 35a63379fbc2c36439618e4ba73afe43,
+    type: 3}
 --- !u!4 &1583080184
 Transform:
   m_ObjectHideFlags: 0
