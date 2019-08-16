@@ -247,6 +247,16 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -375,6 +385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stationName
       value: "\uC7A0\uC2E4\uC0C8\uB0B4"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
@@ -632,6 +647,16 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -782,6 +807,21 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -1207,6 +1247,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1144790499}
     m_Modifications:
+    - target: {fileID: 5859746960526808228, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
+        type: 3}
+      propertyPath: m_Name
+      value: LoopTrain
+      objectReference: {fileID: 0}
     - target: {fileID: 5367551564922994620, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
         type: 3}
       propertyPath: m_Name
@@ -1546,11 +1591,6 @@ PrefabInstance:
         type: 3}
       propertyPath: trainSpeed
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5859746960526808228, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
-        type: 3}
-      propertyPath: m_Name
-      value: LoopTrain
       objectReference: {fileID: 0}
     - target: {fileID: 5859746959185084936, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
         type: 3}
@@ -1907,6 +1947,16 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -2145,6 +2195,21 @@ PrefabInstance:
       propertyPath: isBeverageVending
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -2342,6 +2407,11 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -2474,6 +2544,16 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -2922,6 +3002,16 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -3104,6 +3194,21 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -3242,6 +3347,11 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -3408,6 +3518,21 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -3558,6 +3683,16 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -3712,6 +3847,11 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -3844,6 +3984,11 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -4041,6 +4186,11 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -4266,6 +4416,16 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -4509,6 +4669,16 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -4815,6 +4985,16 @@ PrefabInstance:
       propertyPath: stationName
       value: "\uB69D\uC12C"
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -5071,6 +5251,16 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -5223,6 +5413,21 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -5355,6 +5560,21 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -5687,6 +5907,16 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -5819,6 +6049,16 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -5955,6 +6195,26 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -6087,6 +6347,16 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -6320,6 +6590,21 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -6478,6 +6763,16 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -6612,6 +6907,16 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -6740,6 +7045,16 @@ PrefabInstance:
         type: 3}
       propertyPath: stationName
       value: "\uBB38\uB798"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
@@ -7178,6 +7493,16 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -7660,6 +7985,16 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -7794,6 +8129,16 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -7926,6 +8271,21 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -8074,6 +8434,16 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -8206,6 +8576,11 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -8572,6 +8947,16 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -8899,6 +9284,21 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -9073,6 +9473,16 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -9288,6 +9698,11 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -9420,6 +9835,16 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -9891,6 +10316,16 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -10553,6 +10988,16 @@ PrefabInstance:
     - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: isReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canToilet
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
@@ -11249,6 +11694,16 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -11462,6 +11917,16 @@ PrefabInstance:
       propertyPath: isReversible
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -11670,6 +12135,21 @@ PrefabInstance:
       propertyPath: stationName
       value: "\uC2E0\uCD0C"
       objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canReversible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
       propertyPath: m_IsActive
@@ -11816,6 +12296,16 @@ PrefabInstance:
         type: 3}
       propertyPath: stationName
       value: "\uAD6C\uC758"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canBeverageVending
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
@@ -12753,6 +13243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stationName
       value: "\uC744\uC9C0\uB85C\uC785\uAD6C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976858469599785751, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
+        type: 3}
+      propertyPath: canSnackVending
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1809674792288586346, guid: 3b3d5e7c7e2fcf24884586eaf9a2aeff,
         type: 3}
