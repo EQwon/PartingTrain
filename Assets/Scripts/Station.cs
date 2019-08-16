@@ -45,6 +45,8 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private Text stationNameText;
     private Image toiletImage;
     private Image reversibleImage;
+    private Image beverageImage;
+    private Image snackImage;
 
     private void Start()
     {
@@ -52,6 +54,8 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         stationNameText = child.FindInObjects("StationName").GetComponent<Text>();
         toiletImage = child.FindInObjects("Toilet").GetComponent<Image>();
         reversibleImage = child.FindInObjects("Reversible").GetComponent<Image>();
+        beverageImage = child.FindInObjects("Beverage").GetComponent<Image>();
+        snackImage = child.FindInObjects("Snack").GetComponent<Image>();
 
         if (transform.GetChild(0).gameObject.activeSelf)
         {
@@ -61,6 +65,8 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         stationNameText.text = stationName;
         toiletImage.gameObject.SetActive(canToilet);
         reversibleImage.gameObject.SetActive(canReversible);
+        beverageImage.gameObject.SetActive(canBeverageVending);
+        snackImage.gameObject.SetActive(canSnackVending);
     }
 
     private void Show()
