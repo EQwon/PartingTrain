@@ -20,7 +20,14 @@ public static class TransformExtension
 
     public static GameObject FindInChildren(this Transform go, string name)
     {
-        return (from x in go.GetComponentsInChildren<Transform>()
+        return (from x in go.GetComponentsInChildren<Transform>(true)
+                where x.gameObject.name == name
+                select x.gameObject).First();
+    }
+
+    public static GameObject FindInObjects(this Transform[] _ob, string name)
+    {
+        return (from x in _ob
                 where x.gameObject.name == name
                 select x.gameObject).First();
     }

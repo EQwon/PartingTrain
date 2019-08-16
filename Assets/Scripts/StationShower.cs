@@ -12,7 +12,7 @@ public class StationShower : MonoBehaviour
     private void Start()
     {
         ActionBubble.SetActive(false);
-        InfoBubble.SetActive(false);
+        //InfoBubble.SetActive(false);
     }
 
     private void InfoInitialize()
