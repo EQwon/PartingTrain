@@ -8,6 +8,7 @@ public class GameManager : Singleton<GameManager>
 {
     public Player[] players = new Player[2];
     public StationShower[] showers;
+    public StationInfo stationInfo;
 
     private float time;
 
@@ -221,5 +222,15 @@ public class GameManager : Singleton<GameManager>
             if (isValid)
                 return randomStation;
         }
+    }
+
+    public void ShowStationInfo(Station _station)
+    {
+        stationInfo.Show(_station.stationName, _station.canToilet, _station.canReversible, _station.canBeverageVending, _station.canSnackVending, _station.GetComponent<RectTransform>());
+    }
+
+    public void HideStationInfo()
+    {
+        stationInfo.gameObject.SetActive(false);
     }
 }
