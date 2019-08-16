@@ -61,6 +61,8 @@ public class GameManager : Singleton<GameManager>
         players[idx].risk += DataInfo.oppositeRisk;
         players[idx].isOpposite = !players[0].isOpposite;
 
+        SpendTime(DataInfo.oppositeTime);
+
         _finishAction?.Invoke();
     }
 
@@ -71,6 +73,8 @@ public class GameManager : Singleton<GameManager>
 
         players[idx].hygiene += DataInfo.toiletHygiene;
         players[idx].risk = DataInfo.toiletRisk;
+
+        SpendTime(DataInfo.toiletTime);
 
         _finishAction?.Invoke();
     }
@@ -88,6 +92,8 @@ public class GameManager : Singleton<GameManager>
             players[idx].money -= DataInfo.beverageVendingMachineMoney;
         }
 
+        SpendTime(DataInfo.beverageTime);
+
         _finishAction?.Invoke();
     }
 
@@ -104,6 +110,8 @@ public class GameManager : Singleton<GameManager>
             players[idx].money -= DataInfo.snackVendingMachineMoney;
         }
 
+        SpendTime(DataInfo.snackTime);
+
         _finishAction?.Invoke();
     }
     
@@ -114,6 +122,8 @@ public class GameManager : Singleton<GameManager>
 
         players[idx].money += DataInfo.beggingMoney;
         players[idx].risk = DataInfo.beggingRisk;
+
+        SpendTime(DataInfo.beggingTime);
 
         _finishAction.Invoke();
     }
@@ -148,5 +158,10 @@ public class GameManager : Singleton<GameManager>
 
             text.text = string.Format("{0:00} : {1:00}", timeSpan.Hours, timeSpan.Minutes);
         }
+    }
+
+    public void SpendTime(int _time)
+    {
+        timeSpan += TimeSpan.FromMinutes(4 * _time);
     }
 }
