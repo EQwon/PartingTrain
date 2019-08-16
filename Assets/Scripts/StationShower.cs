@@ -9,16 +9,23 @@ public class StationShower : MonoBehaviour
 
     private Button[] actionButtons = new Button[5];
 
+    private int buttonLength;
+
     private void Start()
     {
         actionButtons = GetComponentsInChildren<Button>(true);
+
+        buttonLength = actionButtons.Length;
 
         actionButtons[0].onClick.AddListener(() => Opposite());
         actionButtons[1].onClick.AddListener(() => GoToToilet());
         actionButtons[2].onClick.AddListener(() => Beverage());
         actionButtons[3].onClick.AddListener(() => Snack());
         actionButtons[4].onClick.AddListener(() => Ride());
-        actionButtons[5].onClick.AddListener(() => Quit());
+        actionButtons[5].onClick.AddListener(() => Begging());
+        actionButtons[6].onClick.AddListener(() => Quit());
+
+        actionButtons[buttonLength - 1].gameObject.SetActive(false);
     }
 
     public void QuitAction(Station info)
@@ -29,23 +36,24 @@ public class StationShower : MonoBehaviour
             return;
         }
 
-        actionButtons[5].gameObject.SetActive(false);
+        actionButtons[buttonLength - 1].gameObject.SetActive(false);
 
-        actionButtons[0].gameObject.SetActive(info.isReversible);
-        actionButtons[1].gameObject.SetActive(info.isToilet);
-        actionButtons[2].gameObject.SetActive(info.isBeverageVending);
-        actionButtons[3].gameObject.SetActive(info.isSnackVending);
-        actionButtons[4].gameObject.SetActive(true);
+        actionButtons[0].gameObject.SetActive(info.canReversible);
+        actionButtons[1].gameObject.SetActive(info.canToilet);
+        actionButtons[2].gameObject.SetActive(info.canBeverageVending);
+        actionButtons[3].gameObject.SetActive(info.canSnackVending);
+        actionButtons[4].gameObject.SetActive(info.canRiding);
+        actionButtons[5].gameObject.SetActive(info.canBegging);
     }
 
     public void RideAction()
     {
-        for(int i = 0; i < 5; i++)
+        for(int i = 0; i < buttonLength - 1; i++)
         {
             actionButtons[i].gameObject.SetActive(false);
         }
 
-        actionButtons[5].gameObject.SetActive(true);
+        actionButtons[buttonLength - 1].gameObject.SetActive(true);
     }
 
     public void GoToToilet()

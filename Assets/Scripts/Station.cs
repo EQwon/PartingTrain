@@ -8,11 +8,13 @@ using UnityEngine.UI;
 public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public string stationName;
-    public bool isToilet;
-    public bool isReversible;
-    public bool isSnackVending;
-    public bool isBeverageVending; 
-    
+    public bool canToilet;
+    public bool canReversible;
+    public bool canSnackVending;
+    public bool canBeverageVending;
+    public bool canBegging = true;
+    public bool canRiding = true;
+
     List<IPassenger> passengers = new List<IPassenger>();
 
     public List<IPassenger> GetBoardingPassengers => passengers.FindAll(p => p.WantToGetIn);
@@ -57,8 +59,8 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
 
         stationNameText.text = stationName;
-        toiletImage.gameObject.SetActive(isToilet);
-        reversibleImage.gameObject.SetActive(isReversible);
+        toiletImage.gameObject.SetActive(canToilet);
+        reversibleImage.gameObject.SetActive(canReversible);
     }
 
     private void Show()
