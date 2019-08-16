@@ -48,6 +48,8 @@ public class Player : MonoBehaviour, IPassenger
         transform.SetParent(train.transform);
         transform.localPosition = Vector3.zero;
         WantToGetIn = false;
+        isRiding = true;
+        stationInfo = null;
         station.Out(this);
     }
 
@@ -57,15 +59,14 @@ public class Player : MonoBehaviour, IPassenger
         transform.SetParent(station.transform, false);
         transform.localPosition = Vector3.zero;
         WantToGetOff = false;
+        isRiding = false;
+        stationInfo = station;
         station.Enter(this);
     }
 
     public void OnBoarding(Train train, Station station)
     {
-        Debug.Log($"{name}은 {train.name}을 타고 {station}에 도착했음");
-
-        if (station.name == "3")
-            WantToGetOff = true;
+        Debug.Log($"{name}은 {train.name}을 타고 {station}에 도착했음 (아직 내리지 않은 상태)");
     }
 
 }

@@ -22,34 +22,34 @@ public class GameManager : Singleton<GameManager>
         StartCoroutine(DayClockCoroutine());
     }
 
-    //역 갱신
-    public void StationRefresh(bool _isMan, Station _info, Action _finishAction = null)
-    {
-        int idx = _isMan ? 0 : 1;
+    //역 갱신 Player의 GetIn GetOut에서 관리
+//    public void StationRefresh(bool _isMan, Station _info, Action _finishAction = null)
+//    {
+//        int idx = _isMan ? 0 : 1;
+//
+//        players[idx].stationInfo = _info;
+//
+//        _finishAction?.Invoke();
+//    }
 
-        players[idx].stationInfo = _info;
-
-        _finishAction?.Invoke();
-    }
-
-    //탑승
+    //탑승예약
     public void GetIn(bool _isMan, Action _finishAction = null)
     {
         int idx = _isMan ? 0 : 1;
 
-        players[idx].isRiding = true;
+        players[idx].WantToGetIn = true;
 
         _finishAction?.Invoke();
     }
 
-    //하차
+    //하차예약
     public void GetOut(bool _isMan, Action _finishAction = null)
     {
         int idx = _isMan ? 0 : 1;
 
-        players[idx].isRiding = false;
+        players[idx].WantToGetOff = true;
 
-        _finishAction.Invoke();
+        _finishAction?.Invoke();
     }
 
     //반대방향
