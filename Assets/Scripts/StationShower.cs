@@ -1,13 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StationShower : MonoBehaviour
 {
     public StationInfo info;
 
     public GameObject ActionBubble;
+
+    [Header("Info Bubble")]
     public GameObject InfoBubble;
+    public Text stationName;
+    public GameObject reversible;
+    public GameObject toilet;
 
     private void Start()
     {
