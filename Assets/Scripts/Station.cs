@@ -10,6 +10,8 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public string stationName;
     public bool isToilet;
     public bool isReversible;
+    public bool isSnackVending;
+    public bool isBeverageVending;
     
     List<IPassenger> passengers = new List<IPassenger>();
 

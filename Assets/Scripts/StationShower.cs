@@ -7,24 +7,32 @@ public class StationShower : MonoBehaviour
 {
     public Station info;
 
-    public GameObject ActionBubble;
-
-    [Header("Info Bubble")]
-    public GameObject InfoBubble;
-    public Text stationName;
-    public GameObject reversible;
-    public GameObject toilet;
+    public Button[] actionButtons = new Button[4];
 
     private void Start()
     {
-        ActionBubble.SetActive(false);
-        //InfoBubble.SetActive(false);
+        actionButtons = GetComponentsInChildren<Button>();
+
+        actionButtons[0].onClick.AddListener(() => Opposite());
+        actionButtons[1].onClick.AddListener(() => GoToToilet());
+        actionButtons[2].onClick.AddListener(() => Beverage());
+        actionButtons[3].onClick.AddListener(() => Snack());
     }
 
-    private void InfoInitialize()
+    public void ShowAction()
     {
+        if(info == null)
+        {
+            Debug.LogError("액션을 보여주기 위한 역 정보가 없음");
+            return;
+        }
 
+        actionButtons[0].gameObject.SetActive(info.isReversible);
+        actionButtons[1].gameObject.SetActive(info.isToilet);
+        actionButtons[2].gameObject.SetActive(info.isBeverageVending);
+        actionButtons[3].gameObject.SetActive(info.isSnackVending);
     }
+
 
     public void GoToToilet()
     {
