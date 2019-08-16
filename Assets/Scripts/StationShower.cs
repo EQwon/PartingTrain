@@ -17,7 +17,8 @@ public class StationShower : MonoBehaviour
         actionButtons[1].onClick.AddListener(() => GoToToilet());
         actionButtons[2].onClick.AddListener(() => Beverage());
         actionButtons[3].onClick.AddListener(() => Snack());
-        actionButtons[4].onClick.AddListener(() => Quit());
+        actionButtons[4].onClick.AddListener(() => Ride());
+        actionButtons[5].onClick.AddListener(() => Quit());
     }
 
     public void QuitAction(Station info)
@@ -32,16 +33,17 @@ public class StationShower : MonoBehaviour
         actionButtons[1].gameObject.SetActive(info.isToilet);
         actionButtons[2].gameObject.SetActive(info.isBeverageVending);
         actionButtons[3].gameObject.SetActive(info.isSnackVending);
+        actionButtons[4].gameObject.SetActive(true);
     }
 
     public void RideAction()
     {
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < 5; i++)
         {
             actionButtons[i].gameObject.SetActive(false);
         }
 
-        actionButtons[4].gameObject.SetActive(true);
+        actionButtons[5].gameObject.SetActive(true);
     }
 
     public void GoToToilet()
