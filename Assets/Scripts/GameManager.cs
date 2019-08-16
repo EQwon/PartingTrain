@@ -125,7 +125,7 @@ public class GameManager : Singleton<GameManager>
 
         SpendTime(DataInfo.beggingTime);
 
-        _finishAction.Invoke();
+        _finishAction?.Invoke();
     }
 
     private bool CanBuy(bool _isMan, int _cost)
