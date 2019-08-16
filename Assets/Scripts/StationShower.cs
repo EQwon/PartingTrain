@@ -11,7 +11,7 @@ public class StationShower : MonoBehaviour
 
     private void Start()
     {
-        actionButtons = GetComponentsInChildren<Button>();
+        actionButtons = GetComponentsInChildren<Button>(true);
 
         actionButtons[0].onClick.AddListener(() => Opposite());
         actionButtons[1].onClick.AddListener(() => GoToToilet());
@@ -28,6 +28,8 @@ public class StationShower : MonoBehaviour
             Debug.LogError("액션을 보여주기 위한 역 정보가 없음");
             return;
         }
+
+        actionButtons[5].gameObject.SetActive(false);
 
         actionButtons[0].gameObject.SetActive(info.isReversible);
         actionButtons[1].gameObject.SetActive(info.isToilet);
