@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Train : MonoBehaviour
 {
-    List<Station> stations;
+    [SerializeField] List<Station> stations;
 
     List<IPassenger> passengers = new List<IPassenger>();
 
@@ -14,9 +14,14 @@ public class Train : MonoBehaviour
         StartCoroutine(nameof(TrainUpdator));
     }
 
+    private void Start()
+    {
+        StartCoroutine(nameof(TrainUpdator));
+    }
+
     IEnumerator TrainUpdator()
     {
-        Queue<Station> stationQueue = new Queue<Station>(stations);;
+        Queue<Station> stationQueue = new Queue<Station>(stations);
 
         if (stationQueue.Count <= 0)
             yield break;
