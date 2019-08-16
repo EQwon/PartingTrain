@@ -18,6 +18,7 @@
           <e p="Player.cs" t="Include" />
           <e p="Singleton.cs" t="Include" />
           <e p="Station.cs" t="Include" />
+          <e p="StationInfo.cs" t="Include" />
           <e p="StationShower.cs" t="Include" />
           <e p="Train.cs" t="Include" />
         </e>
