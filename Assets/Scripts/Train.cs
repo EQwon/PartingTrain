@@ -85,9 +85,12 @@ public class Train : MonoBehaviour
 
     IEnumerator TrainMovementUpdator(Station currentStation, Station nextStation)
     {
-        Vector3 direction = nextStation.transform.position - currentStation.transform.position;
-        transform.right = direction;
+        Vector3 direction = nextStation.transform.position - transform.position;
 
+        float dot = Vector3.Dot(transform.right, direction);
+        if(dot < 0)
+            transform.right = direction;
+        Quaternion targetQuaternion = Quaternion.FromToRotation(Vector3.right, direction);
         float timer = 0;
         while (true)
         {
@@ -96,11 +99,23 @@ public class Train : MonoBehaviour
                 transform.position = nextStation.transform.position;
                 break;
             }
-
             transform.position = Vector3.Lerp(currentStation.transform.position, nextStation.transform.position, timer);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetQuaternion, Time.deltaTime * 10);
             timer += Time.deltaTime * trainSpeed;
             yield return null;
         }
     }
     
+    static float QuadraticEaseInOut(float p)
+    {
+        if(p < 0.5f)
+        {
+            return 2 * p * p;
+        }
+        else
+        {
+            return (-2 * p * p) + (4 * p) - 1;
+        }
+    }
+
 }
