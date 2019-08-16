@@ -19,4 +19,11 @@ public static class DataInfo
 
     public const int beggingRisk = 30;
     public const int beggingMoney = 300;
+
+    public const int playerStartMoney = 300;
+    public const int playerStartSatiety = 80;
+    public const int playerStartMoisture = 70;
+    public const int playerStartHygiene = 90;
+    public const int playerStartRisk = 0;
+    public const bool playerStartMeeting = false;
 }
