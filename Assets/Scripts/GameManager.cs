@@ -72,7 +72,7 @@ public class GameManager : Singleton<GameManager>
         int idx = _isMan ? 0 : 1;
 
         players[idx].hygiene += DataInfo.toiletHygiene;
-        players[idx].risk = DataInfo.toiletRisk;
+        players[idx].risk += DataInfo.toiletRisk;
 
         SpendTime(DataInfo.toiletTime);
 
@@ -85,7 +85,7 @@ public class GameManager : Singleton<GameManager>
         int idx = _isMan ? 0 : 1;
 
         players[idx].moisture += DataInfo.beverageVendingMachineMoisture;
-        players[idx].risk = DataInfo.beverageVendingMachineRisk;
+        players[idx].risk += DataInfo.beverageVendingMachineRisk;
 
         if (CanBuy(_isMan, DataInfo.beverageVendingMachineMoney))
         {
@@ -103,7 +103,7 @@ public class GameManager : Singleton<GameManager>
         int idx = _isMan ? 0 : 1;
 
         players[idx].satiety += DataInfo.snackVendingMachineSatiety;
-        players[idx].risk = DataInfo.snackVendingMachineRisk;
+        players[idx].risk += DataInfo.snackVendingMachineRisk;
 
         if (CanBuy(_isMan, DataInfo.snackVendingMachineMoney))
         {
@@ -121,7 +121,7 @@ public class GameManager : Singleton<GameManager>
         int idx = _isMan ? 0 : 1;
 
         players[idx].money += DataInfo.beggingMoney;
-        players[idx].risk = DataInfo.beggingRisk;
+        players[idx].risk += DataInfo.beggingRisk;
 
         SpendTime(DataInfo.beggingTime);
 
