@@ -26,4 +26,10 @@ public static class DataInfo
     public const int playerStartHygiene = 90;
     public const int playerStartRisk = 0;
     public const bool playerStartMeeting = false;
+
+    public const int oppositeTime = 1;
+    public const int toiletTime = 3;
+    public const int beverageTime = 3;
+    public const int snackTime = 3;
+    public const int beggingTime = 3;
 }

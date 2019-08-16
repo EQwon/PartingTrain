@@ -9,7 +9,7 @@ public class StationShower : MonoBehaviour
 
     public bool man;
 
-    private Button[] actionButtons = new Button[4];
+    private Button[] actionButtons = new Button[5];
 
     private void Start()
     {
@@ -19,9 +19,10 @@ public class StationShower : MonoBehaviour
         actionButtons[1].onClick.AddListener(() => GoToToilet());
         actionButtons[2].onClick.AddListener(() => Beverage());
         actionButtons[3].onClick.AddListener(() => Snack());
+        actionButtons[4].onClick.AddListener(() => Quit());
     }
 
-    public void ShowAction()
+    public void QuitAction()
     {
         if(info == null)
         {
@@ -35,12 +36,14 @@ public class StationShower : MonoBehaviour
         actionButtons[3].gameObject.SetActive(info.isSnackVending);
     }
 
-    public void HideAction()
+    public void RideAction()
     {
-        for(int i = 0; i < actionButtons.Length; i++)
+        for(int i = 0; i < 4; i++)
         {
             actionButtons[i].gameObject.SetActive(false);
         }
+
+        actionButtons[4].gameObject.SetActive(true);
     }
 
     public void GoToToilet()
