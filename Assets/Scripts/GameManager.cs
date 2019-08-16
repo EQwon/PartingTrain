@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class GameManager : Singleton<GameManager>
@@ -26,6 +27,20 @@ public class GameManager : Singleton<GameManager>
     //역정보
     [HideInInspector]
     public StationInfo stationInfo;
+
+    private float time;
+
+    private TimeSpan timeSpan;
+
+    public Text text;
+
+    private void Start()
+    {
+        timeSpan = new TimeSpan();
+        timeSpan += TimeSpan.FromHours(5);
+
+        StartCoroutine(DayClockCoroutine());
+    }
 
     //역 갱신
     public void StationRefresh(StationInfo _info, Action _finishAction = null)
@@ -114,5 +129,25 @@ public class GameManager : Singleton<GameManager>
         }
 
         return false;
+    }
+
+    private void CheckGameOver()
+    {
+        if(satiety <= 0 || moisture <= 0 || hygiene <= 0)
+        {
+            Debug.Log("게임 오버");
+        }
+    }
+
+    private IEnumerator DayClockCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+
+            timeSpan += TimeSpan.FromMinutes(4);
+
+            text.text = string.Format("{0:00} : {1:00}", timeSpan.Hours, timeSpan.Minutes);
+        }
     }
 }
