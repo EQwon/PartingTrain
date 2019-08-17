@@ -24,8 +24,6 @@ public class GameManager : Singleton<GameManager>
     Station[] stations;
     Coroutine dayClockCoroutine;
 
-    [SerializeField] List<Quest> quests;
-
     protected override void Awake()
     {
         base.Awake();
@@ -94,8 +92,7 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        players[idx].Hygine += DataInfo.toiletHygiene;
-        players[idx].Risk += DataInfo.toiletRisk;
+        players[idx].Toilet();
 
         SpendTime(idx, DataInfo.toiletTime);
         UIManager.instance.playerStatus.StatusRefresh("Hygine", players[idx]);
@@ -109,17 +106,7 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        if (CanBuy(_isMan, DataInfo.beverageVendingMachineMoney))
-        {
-            players[idx].Money -= DataInfo.beverageVendingMachineMoney;
-        }
-        else
-        {
-            return;
-        }
-
-        players[idx].Moisture += DataInfo.beverageVendingMachineMoisture;
-        players[idx].Risk += DataInfo.beverageVendingMachineRisk;
+        players[idx].BeverageVendingMachine();
 
         SpendTime(idx, DataInfo.beverageTime);
         UIManager.instance.playerStatus.StatusRefresh("Moisture", players[idx]);
@@ -134,17 +121,7 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        if (CanBuy(_isMan, DataInfo.snackVendingMachineMoney))
-        {
-            players[idx].Money -= DataInfo.snackVendingMachineMoney;
-        }
-        else
-        {
-            return;
-        }
-
-        players[idx].Satiety += DataInfo.snackVendingMachineSatiety;
-        players[idx].Risk += DataInfo.snackVendingMachineRisk;
+        players[idx].SnackVendingMachine();
 
         SpendTime(idx, DataInfo.snackTime);
         UIManager.instance.playerStatus.StatusRefresh("Satiety", players[idx]);
@@ -159,8 +136,7 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        players[idx].Money += DataInfo.beggingMoney;
-        players[idx].Risk += DataInfo.beggingRisk;
+        players[idx].Begging();
 
         SpendTime(idx, DataInfo.beggingTime);
 
@@ -168,18 +144,6 @@ public class GameManager : Singleton<GameManager>
         UIManager.instance.playerStatus.StatusRefresh("Risk", players[idx]);
 
         _finishAction?.Invoke();
-    }
-
-    private bool CanBuy(bool _isMan, int _cost)
-    {
-        int idx = _isMan ? 0 : 1;
-
-        if(players[idx].Money >= _cost)
-        {
-            return true;
-        }
-
-        return false;
     }
 
     private bool CheckGameOver()
