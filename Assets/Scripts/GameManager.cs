@@ -51,7 +51,7 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        players[idx].WantToGetIn = true;
+        players[idx].WantToGetIn = !players[idx].WantToGetIn;
 
         _finishAction?.Invoke();
     }
@@ -97,13 +97,17 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        players[idx].Moisture += DataInfo.beverageVendingMachineMoisture;
-        players[idx].Risk += DataInfo.beverageVendingMachineRisk;
-
         if (CanBuy(_isMan, DataInfo.beverageVendingMachineMoney))
         {
             players[idx].Money -= DataInfo.beverageVendingMachineMoney;
         }
+        else
+        {
+            return;
+        }
+
+        players[idx].Moisture += DataInfo.beverageVendingMachineMoisture;
+        players[idx].Risk += DataInfo.beverageVendingMachineRisk;
 
         SpendTime(idx, DataInfo.beverageTime);
         UIManager.instance.playerStatus.StatusRefresh("Moisture", players[idx]);
@@ -116,13 +120,17 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        players[idx].Satiety += DataInfo.snackVendingMachineSatiety;
-        players[idx].Risk += DataInfo.snackVendingMachineRisk;
-
         if (CanBuy(_isMan, DataInfo.snackVendingMachineMoney))
         {
             players[idx].Money -= DataInfo.snackVendingMachineMoney;
         }
+        else
+        {
+            return;
+        }
+
+        players[idx].Satiety += DataInfo.snackVendingMachineSatiety;
+        players[idx].Risk += DataInfo.snackVendingMachineRisk;
 
         SpendTime(idx, DataInfo.snackTime);
         UIManager.instance.playerStatus.StatusRefresh("Satiety", players[idx]);
