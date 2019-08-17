@@ -27,8 +27,6 @@ public class StationShower : MonoBehaviour
         actionButtons[3].onClick.AddListener(() => Snack());
         actionButtons[4].onClick.AddListener(() => Beverage());
         actionButtons[5].onClick.AddListener(() => Begging());
-        
-        actionButtons[buttonLength - 1].gameObject.SetActive(false);
     }
 
     public void QuitAction(Station info)

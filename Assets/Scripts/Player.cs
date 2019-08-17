@@ -87,9 +87,21 @@ public class Player : MonoBehaviour, IPassenger
     public bool WantToGetIn { get; set; }
     public bool IsOpposite => isOpposite;
 
-    void Start()
+    private void Start()
     {
+        //초기값 설정
+        risk = DataInfo.playerStartRisk;
+        money = DataInfo.playerStartMoney;
+        moisture = DataInfo.playerStartMoisture;
+        hygiene = DataInfo.playerStartHygiene;
+        satiety = DataInfo.playerStartSatiety;
+        meeting = DataInfo.playerStartMeeting;
+
         Init(startStation);
+
+        stationInfo = startStation;
+        int idx = isMan ? 0 : 1;
+        UIManager.instance.showers[idx].QuitAction(stationInfo);
     }
 
     private void Update()
