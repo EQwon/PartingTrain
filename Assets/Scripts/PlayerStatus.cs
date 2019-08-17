@@ -38,6 +38,19 @@ public class PlayerStatus : MonoBehaviour
         buttons[5].onClick.AddListener(() => ShowStatusValue(3, false, "Satiety", buttons[3].GetComponent<RectTransform>()));
         buttons[6].onClick.AddListener(() => ShowStatusValue(4, false, "Moisture", buttons[4].GetComponent<RectTransform>()));
         buttons[7].onClick.AddListener(() => ShowStatusValue(5, false, "Hygine", buttons[5].GetComponent<RectTransform>()));
+
+        SetStart();
+    }
+
+    public void SetStart()
+    {
+        for(int i = 0; i < GameManager.instance.players.Length; i++)
+        {
+            statusImages[i].images[0].fillAmount = DataInfo.playerStartSatiety * 0.01f;
+            statusImages[i].images[1].fillAmount = DataInfo.playerStartMoisture * 0.01f;
+            statusImages[i].images[2].fillAmount = DataInfo.playerStartHygiene * 0.01f;
+            statusImages[i].text.text = DataInfo.playerStartMoney.ToString();
+        }
     }
 
     public void StatusRefresh(string _eventName, Player _player)
