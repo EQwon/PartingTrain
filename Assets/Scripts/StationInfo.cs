@@ -35,8 +35,17 @@ public class StationInfo : MonoBehaviour
 
         rect.anchoredPosition = new Vector2(_transform.anchoredPosition.x, _transform.anchoredPosition.y + 60);
 
-        //Vector3 vec = _transform.position;        
-        //transform.position = new Vector3(vec.x, vec.y + 10, vec.z) ;
         gameObject.SetActive(true);
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)transform);
+    }
+
+    private void OnDisable()
+    {
+        stationNameText.text = null;
+        toiletImage.gameObject.SetActive(false);
+        reversibleImage.gameObject.SetActive(false);
+        beverageImage.gameObject.SetActive(false);
+        snackImage.gameObject.SetActive(false);
     }
 }
