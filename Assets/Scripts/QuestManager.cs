@@ -187,7 +187,7 @@ public class QuestManager : Singleton<QuestManager>
         }
         else
         {
-            return value >= 0 ? $"+{1-value}%" : $"-{1-value}";
+            return value >= 0 ? $"+{(1-value)*100f}%" : $"-{(1-value)*100f}";
         }
     }
 }
