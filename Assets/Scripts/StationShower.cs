@@ -70,6 +70,7 @@ public class StationShower : MonoBehaviour
     public void Begging()
     {
         GameManager.instance.Begging(man);
+        SoundManager.instance.PlaySound(SoundManager.instance.beggingClip, 0.7f);
     }
 
     public void Ride()
@@ -96,6 +97,7 @@ public class StationShower : MonoBehaviour
     public void Beverage()
     {
         GameManager.instance.BeverageVendingMachine(man);
+        SoundManager.instance.PlaySound(SoundManager.instance.beverageClip, 1f);
     }
 
     public void Snack()

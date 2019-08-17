@@ -8647,6 +8647,8 @@ MonoBehaviour:
   popClip: {fileID: 8300000, guid: 3ba6a72e008fe1a45a35d26169a532d9, type: 3}
   runClip: {fileID: 8300000, guid: ffb8b150e1814f04a84ccc642b10562f, type: 3}
   snackClip: {fileID: 8300000, guid: e7aee55d24939d94c882202eb60472b9, type: 3}
+  beverageClip: {fileID: 8300000, guid: 9bdb4a9b5cf088d45830b028726f49ee, type: 3}
+  beggingClip: {fileID: 8300000, guid: 848078cb307862041af3acc7bef9ace2, type: 3}
 --- !u!4 &719484222
 Transform:
   m_ObjectHideFlags: 0
