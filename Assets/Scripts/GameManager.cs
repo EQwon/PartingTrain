@@ -201,7 +201,7 @@ public class GameManager : Singleton<GameManager>
     public void RemoveAgent(Agent agent)
     {
         agents.Remove(agent);
-        Destroy(agent);
+        Destroy(agent.gameObject);
     }
 
     public Station GetRandomStationForAgentSpawn()

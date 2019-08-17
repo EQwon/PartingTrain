@@ -19,6 +19,7 @@ public class Agent : MonoBehaviour, IPassenger
     {
         transform.SetParent(station.transform);
         transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
         WantToGetIn = true;
         station.Enter(this);
     }
@@ -28,6 +29,7 @@ public class Agent : MonoBehaviour, IPassenger
         Debug.Log($"{name}이 {station.name} 에서 {train} 열차를 탐");
         transform.SetParent(train.transform);
         transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
         WantToGetIn = false;
         station.Out(this);
 
@@ -40,6 +42,7 @@ public class Agent : MonoBehaviour, IPassenger
         Debug.Log($"{name}이 {station.name} 에서 열차를 내림");
         transform.SetParent(station.transform, false);
         transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
         WantToGetOff = false;
         station.Enter(this);
 
