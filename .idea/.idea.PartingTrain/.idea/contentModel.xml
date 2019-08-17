@@ -17,6 +17,7 @@
           <e p="IPassenger.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerStatus.cs" t="Include" />
+          <e p="QuestManager.cs" t="Include" />
           <e p="Singleton.cs" t="Include" />
           <e p="Station.cs" t="Include" />
           <e p="StationInfo.cs" t="Include" />

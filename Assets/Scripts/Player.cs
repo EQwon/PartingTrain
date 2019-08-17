@@ -69,6 +69,15 @@ public class Player : MonoBehaviour, IPassenger
     float hygiene;
     float risk;
 
+    public enum PlayerStatus
+    {
+        Money,
+        Satiety,
+        Moisture,
+        Hygiene,
+        Risk
+    };
+
     
     //탑승상황
     public bool isRiding;

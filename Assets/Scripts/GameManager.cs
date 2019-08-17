@@ -24,6 +24,8 @@ public class GameManager : Singleton<GameManager>
     Station[] stations;
     Coroutine dayClockCoroutine;
 
+    [SerializeField] List<Quest> quests;
+
     protected override void Awake()
     {
         base.Awake();
