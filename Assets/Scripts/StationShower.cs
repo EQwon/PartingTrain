@@ -64,6 +64,7 @@ public class StationShower : MonoBehaviour
     public void GoToToilet()
     {
         GameManager.instance.Toilet(man);
+        SoundManager.instance.PlaySound(SoundManager.instance.runClip, 1f);
     }
 
     public void Begging()
@@ -100,6 +101,7 @@ public class StationShower : MonoBehaviour
     public void Snack()
     {
         GameManager.instance.SnackVendingMachine(man);
+        SoundManager.instance.PlaySound(SoundManager.instance.snackClip, 0.5f);
     }
 
     public void Opposite()
