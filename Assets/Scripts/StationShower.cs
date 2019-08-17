@@ -13,6 +13,8 @@ public class StationShower : MonoBehaviour
 
     private int buttonLength;
 
+    private bool rideButtonSelected;
+
     void Awake()
     {
         rect = GetComponent<RectTransform>();
@@ -73,6 +75,13 @@ public class StationShower : MonoBehaviour
     public void Ride()
     {
         GameManager.instance.GetIn(man);
+
+        rideButtonSelected = !rideButtonSelected;
+
+        if (rideButtonSelected)
+            actionButtons[0].GetComponent<Image>().color = new Color(0.7f, 0.7f, 0.7f);
+        else
+            actionButtons[0].GetComponent<Image>().color = new Color(1, 1, 1);
     }
 
     public void Quit()
