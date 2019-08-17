@@ -25,13 +25,14 @@ public class GameManager : Singleton<GameManager>
     {
         base.Awake();
         stations = FindObjectsOfType<Station>();
+        
+        timeSpan = new TimeSpan();
+        timeSpan += TimeSpan.FromHours(5);
+
     }
     
     private void Start()
     {
-        timeSpan = new TimeSpan();
-        timeSpan += TimeSpan.FromHours(5);
-
         StartCoroutine(DayClockCoroutine());
     }
 
@@ -73,7 +74,7 @@ public class GameManager : Singleton<GameManager>
         players[idx].Risk += DataInfo.oppositeRisk;
         players[idx].isOpposite = !players[0].isOpposite;
 
-        SpendTime(idx, DataInfo.oppositeTime);
+        SpendTime(DataInfo.oppositeTime);
 
         _finishAction?.Invoke();
     }
@@ -86,7 +87,7 @@ public class GameManager : Singleton<GameManager>
         players[idx].Hygine += DataInfo.toiletHygiene;
         players[idx].Risk += DataInfo.toiletRisk;
 
-        SpendTime(idx, DataInfo.toiletTime);
+        SpendTime(DataInfo.toiletTime);
         UIManager.instance.playerStatus.StatusRefresh("Hygine", players[idx]);
 
         _finishAction?.Invoke();
@@ -105,9 +106,8 @@ public class GameManager : Singleton<GameManager>
             players[idx].Money -= DataInfo.beverageVendingMachineMoney;
         }
 
-        SpendTime(idx, DataInfo.beverageTime);
+        SpendTime(DataInfo.beverageTime);
         UIManager.instance.playerStatus.StatusRefresh("Moisture", players[idx]);
-        UIManager.instance.playerStatus.StatusRefresh("Money", players[idx]);
 
         _finishAction?.Invoke();
     }
@@ -125,9 +125,8 @@ public class GameManager : Singleton<GameManager>
             players[idx].Money -= DataInfo.snackVendingMachineMoney;
         }
 
-        SpendTime(idx, DataInfo.snackTime);
+        SpendTime(DataInfo.snackTime);
         UIManager.instance.playerStatus.StatusRefresh("Satiety", players[idx]);
-        UIManager.instance.playerStatus.StatusRefresh("Money", players[idx]);
 
         _finishAction?.Invoke();
     }
@@ -140,9 +139,7 @@ public class GameManager : Singleton<GameManager>
         players[idx].Money += DataInfo.beggingMoney;
         players[idx].Risk += DataInfo.beggingRisk;
 
-        SpendTime(idx, DataInfo.beggingTime);
-
-        UIManager.instance.playerStatus.StatusRefresh("Money", players[idx]);
+        SpendTime(DataInfo.beggingTime);
 
         _finishAction?.Invoke();
     }
@@ -189,18 +186,9 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public void SpendTime(int _idx, int _time)
+    public void SpendTime(int _time)
     {
-        StartCoroutine(BlockAction(_idx, _time));
-    }
-
-    private IEnumerator BlockAction(int _idx, int _time)
-    {
-        UIManager.instance.showers[_idx].gameObject.SetActive(false);
-
-        yield return new WaitForSeconds(_time);
-
-        UIManager.instance.showers[_idx].gameObject.SetActive(true);
+        timeSpan += TimeSpan.FromMinutes(4 * _time);
     }
 
     public void SpawnAgent()

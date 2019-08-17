@@ -13,12 +13,12 @@ public class StationShower : MonoBehaviour
 
     private int buttonLength;
 
-    private void Start()
+    void Awake()
     {
         rect = GetComponent<RectTransform>();
         stationNameText = GetComponentInChildren<Text>();
         actionButtons = GetComponentsInChildren<Button>(true);
-
+        
         buttonLength = actionButtons.Length;
 
         actionButtons[0].onClick.AddListener(() => Ride());

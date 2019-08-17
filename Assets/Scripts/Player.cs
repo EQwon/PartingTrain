@@ -98,10 +98,6 @@ public class Player : MonoBehaviour, IPassenger
         meeting = DataInfo.playerStartMeeting;
 
         Init(startStation);
-
-        stationInfo = startStation;
-        int idx = isMan ? 0 : 1;
-        UIManager.instance.showers[idx].QuitAction(stationInfo);
     }
 
     private void Update()
@@ -114,6 +110,9 @@ public class Player : MonoBehaviour, IPassenger
         transform.SetParent(station.transform);
         transform.localPosition = Vector3.zero;
         station.Enter(this);
+        stationInfo = station;
+        int idx = isMan ? 0 : 1;
+        UIManager.instance.showers[idx].QuitAction(stationInfo);
     }
     
     public void GetIn(Train train, Station station)
