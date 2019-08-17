@@ -15957,7 +15957,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca350d6148e74b898fdc9428d659b009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quests: []
   questPanel: {fileID: 993053237}
 --- !u!1 &1586342834
 GameObject:

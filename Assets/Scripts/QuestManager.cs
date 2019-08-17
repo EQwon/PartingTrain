@@ -27,11 +27,69 @@ public struct Quest
     
     public QuestTrigger trigger;
     public List<QuestReward> rewards;
+
+    public static Quest RawToQuest(QuestRawData raw)
+    {
+        Debug.Log(raw.ToString());
+        Quest quest = new Quest
+        {
+            title = raw.title,
+            description = raw.description,
+            trigger = new QuestTrigger
+            {
+                action = (Player.PlayerAction)Enum.Parse(typeof(Player.PlayerAction), raw.action),
+                probability = raw.probability
+            },
+            rewards = new List<QuestReward>()
+        };
+        
+        if(raw.hygiene != 0)
+            quest.rewards.Add(new QuestReward{status = Player.PlayerStatus.Hygiene, value = raw.hygiene});
+        
+        if(raw.moisture != 0)
+            quest.rewards.Add(new QuestReward{status = Player.PlayerStatus.Moisture, value = raw.moisture});
+        
+        if(raw.risk != 0)
+            quest.rewards.Add(new QuestReward{status = Player.PlayerStatus.Risk, value = raw.risk});
+        
+        if(raw.satiety != 0)
+            quest.rewards.Add(new QuestReward{status = Player.PlayerStatus.Satiety, value = raw.satiety});
+        
+        if(raw.money != 0)
+            quest.rewards.Add(new QuestReward{status = Player.PlayerStatus.Money, value = raw.money});
+
+        return quest;
+    }
+}
+
+[Serializable]
+public struct QuestRawData
+{
+    public string title;
+    public string description;
+    public string action;
+    public float probability;
+    public float money;
+    public float risk;
+    public float satiety;
+    public float moisture;
+    public float hygiene;
+
+    public override string ToString()
+    {
+        return $"{title} {description} {action} {probability} {money} {risk} {satiety} {moisture} {hygiene}";
+    }
+}
+
+[Serializable]
+public class QuestRawWrapper
+{
+    public QuestRawData[] data;
 }
 
 public class QuestManager : Singleton<QuestManager>
 {
-    [SerializeField] List<Quest> quests;
+    List<Quest> quests = new List<Quest>();
     [SerializeField] Transform questPanel;
 
     Text title;
@@ -46,6 +104,21 @@ public class QuestManager : Singleton<QuestManager>
         valueChanged = questPanel.Find("ValueChange").GetComponent<Text>();
 
         questPanel.gameObject.SetActive(false);
+        
+        LoadQuestData();
+    }
+
+    void LoadQuestData()
+    {
+        TextAsset textAsset = Resources.Load<TextAsset>("quest");
+
+        Debug.Log(textAsset.text);
+        QuestRawWrapper rawDatas = JsonUtility.FromJson<QuestRawWrapper>(textAsset.text);
+
+        foreach (QuestRawData rawData in rawDatas.data)
+        {
+            quests.Add(Quest.RawToQuest(rawData));
+        }
     }
 
     public void TriggerQuest(Player player, Player.PlayerAction action)
@@ -84,7 +157,7 @@ public class QuestManager : Singleton<QuestManager>
     IEnumerator UIUpdator()
     {
         questPanel.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
         questPanel.gameObject.SetActive(false);
     }
 
