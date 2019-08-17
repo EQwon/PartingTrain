@@ -12,6 +12,9 @@ public class GameManager : Singleton<GameManager>
 
     private TimeSpan timeSpan;
 
+    int previousDay;
+    bool playerMeeting = DataInfo.playerStartMeeting;
+
     public float RiskSum => players[0].Risk + players[1].Risk;
     public int MaxAgent => (int)(RiskSum / 20f) + 1;
     public int NumOfAgent => agents.Count;
@@ -19,7 +22,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] Agent agentPrefab;
     List<Agent> agents = new List<Agent>();
     Station[] stations;
-
+    Coroutine dayClockCoroutine;
 
     protected override void Awake()
     {
@@ -28,12 +31,12 @@ public class GameManager : Singleton<GameManager>
         
         timeSpan = new TimeSpan();
         timeSpan += TimeSpan.FromHours(5);
-
+        previousDay = timeSpan.Days;
     }
     
     private void Start()
     {
-        StartCoroutine(DayClockCoroutine());
+        dayClockCoroutine = StartCoroutine(DayClockCoroutine());
     }
 
     //역 갱신 Player의 GetIn GetOut에서 관리
@@ -45,6 +48,12 @@ public class GameManager : Singleton<GameManager>
 //
 //        _finishAction?.Invoke();
 //    }
+
+    public void Meeting()
+    {
+        Debug.Log("부부가 서로 만났어요");
+        playerMeeting = true;
+    }
 
     //탑승예약
     public void GetIn(bool _isMan, Action _finishAction = null)
@@ -163,12 +172,29 @@ public class GameManager : Singleton<GameManager>
         return false;
     }
 
-    private void CheckGameOver()
+    private bool CheckGameOver()
     {
-        //if(satiety <= 0 || moisture <= 0 || hygiene <= 0)
-        //{
-        //    Debug.Log("게임 오버");
-        //}
+        foreach (Player player in players)
+        {
+            if (player.Satiety <= 0 || player.Moisture <= 0 || player.Hygine <= 0)
+            {
+                Debug.LogError("게임 오버");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void CatchPlayer()
+    {
+        GameEnd();
+    }
+
+    void GameEnd()
+    {
+        StopCoroutine(dayClockCoroutine);
+        Time.timeScale = 0;
+        Debug.LogError("게임종료!");
     }
 
     private IEnumerator DayClockCoroutine()
@@ -177,6 +203,21 @@ public class GameManager : Singleton<GameManager>
         {
             yield return null;
 
+            if (previousDay != timeSpan.Days)
+            {
+                if (!playerMeeting)
+                {
+                    Debug.LogError("하루가 지났지만, 부부는 한번도 만나지 못했습니다");
+                    GameEnd();
+                }
+                else
+                {
+                    playerMeeting = false;
+                    Debug.Log("부부가 한번이라도 만났어요");
+                }
+            }
+
+            previousDay = timeSpan.Days;
             timeSpan += TimeSpan.FromMinutes(Time.deltaTime * 4);
             
             for(int i = 0; i <players.Length; i++)
@@ -193,6 +234,11 @@ public class GameManager : Singleton<GameManager>
                 SpawnAgent();
             }
 
+            if (CheckGameOver())
+            {
+                GameEnd();
+            }
+            
             UIManager.instance.timeText.text = string.Format("{0:00} : {1:00}", timeSpan.Hours, timeSpan.Minutes);
         }
     }

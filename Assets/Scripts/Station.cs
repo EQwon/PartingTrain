@@ -18,7 +18,7 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     List<IPassenger> passengers = new List<IPassenger>();
 
     public List<IPassenger> GetBoardingPassengers => passengers.FindAll(p => p.WantToGetIn);
-
+    public bool IsPlayerInStation => passengers.Exists(p => p is Player);
     
     // 열차를 타기 위해 Station -> Train으로 이동
     public void Out(IPassenger passenger)
@@ -37,6 +37,11 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         passenger.Transform.localRotation = Quaternion.identity;
 
         passengers.Add(passenger);
+
+        if (passengers.FindAll(p => p is Player).Count >= 2)
+        {
+            GameManager.instance.Meeting();
+        }
     }
 
     public void Remove(IPassenger passenger)

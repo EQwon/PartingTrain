@@ -65,6 +65,11 @@ public class Agent : MonoBehaviour, IPassenger
     public void OnBoarding(Train train, Station station)
     {
         Debug.Log($"{name}은 {train.name}을 타고 {station}에 도착했음 (아직 내리지 않은 상태) {WantToGetIn} {WantToGetOff}");
+
+        if (station.IsPlayerInStation)
+        {
+            GameManager.instance.CatchPlayer();
+        }
     }
 
     void AgentGetInDelay()

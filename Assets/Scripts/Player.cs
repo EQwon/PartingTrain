@@ -69,9 +69,7 @@ public class Player : MonoBehaviour, IPassenger
     float hygiene;
     float risk;
 
-
-    //만남
-    public bool meeting;
+    
     //탑승상황
     public bool isRiding;
     //반대방향
@@ -96,7 +94,6 @@ public class Player : MonoBehaviour, IPassenger
         moisture = DataInfo.playerStartMoisture;
         hygiene = DataInfo.playerStartHygiene;
         satiety = DataInfo.playerStartSatiety;
-        meeting = DataInfo.playerStartMeeting;
 
         Init(startStation);
     }
@@ -154,6 +151,11 @@ public class Player : MonoBehaviour, IPassenger
     public void OnBoarding(Train train, Station station)
     {
         Debug.Log($"{name}은 {train.name}을 타고 {station}에 도착했음 (아직 내리지 않은 상태) {WantToGetIn} {WantToGetOff}");
+
+        if (station.IsPlayerInStation)
+        {
+            GameManager.instance.Meeting();
+        }
     }
 
 }
