@@ -37,11 +37,15 @@ public class Agent : MonoBehaviour, IPassenger
         transform.localPosition = Vector3.zero;
         WantToGetOff = false;
         station.Enter(this);
-        
+
+        //(필드에 존재하는 요원 수) > (필드에 있어야 하는 요원 수)라면 Destory()
+        //if (GameManager.instance.agents > GameManager.instance.MaxAgent)
+        //    GameManager.instance.RemoveAgent(this);
+
         float randomDelay = Random.Range(8f, 10f) / (1f + GameManager.instance.RiskSum / 100f);
         Invoke(nameof(AgentGetOffDelay), randomDelay);
 
-        int random = Random.Range(0, 1);
+        int random = Random.Range(0, 1); //Random.Range(0,2)가 되어야지 0이랑 1 중 하나가 되는거 아닌가?
         if (random == 1)
         {
             isOpposite = !isOpposite;
