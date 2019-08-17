@@ -89,6 +89,14 @@ public class Player : MonoBehaviour, IPassenger
 
     void Start()
     {
+        //초기값 설정
+        risk = DataInfo.playerStartRisk;
+        money = DataInfo.playerStartMoney;
+        moisture = DataInfo.playerStartMoisture;
+        hygiene = DataInfo.playerStartHygiene;
+        satiety = DataInfo.playerStartSatiety;
+        meeting = DataInfo.playerStartMeeting;
+
         Init(startStation);
     }
 

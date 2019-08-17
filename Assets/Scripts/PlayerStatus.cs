@@ -10,6 +10,7 @@ public class PlayerStatus : MonoBehaviour
     public class StatusImage
     {
         public Image[] images = new Image[3];
+        public Text text;
     }
 
     public StatusImage[] statusImages = new StatusImage[2];
@@ -53,6 +54,9 @@ public class PlayerStatus : MonoBehaviour
                 break;
             case "Hygine":
                 statusImages[idx].images[2].fillAmount = _player.Hygine * 0.01f;
+                break;
+            case "Money":
+                statusImages[idx].text.text = _player.Money.ToString();
                 break;
         }
     }

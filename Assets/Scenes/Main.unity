@@ -5270,10 +5270,12 @@ MonoBehaviour:
     - {fileID: 748888415}
     - {fileID: 962797105}
     - {fileID: 373065867}
+    text: {fileID: 1354479750}
   - images:
     - {fileID: 118578799}
     - {fileID: 2033915780}
     - {fileID: 416715610}
+    text: {fileID: 890272454}
   valueObject: {fileID: 271695891}
   buttons: []
 --- !u!224 &586763820 stripped
