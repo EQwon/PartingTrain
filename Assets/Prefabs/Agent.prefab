@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4438791724011544545}
   - component: {fileID: 4438791724011544558}
   - component: {fileID: 3367777758656592067}
+  - component: {fileID: 3394726132067195038}
   m_Layer: 5
   m_Name: Agent
   m_TagString: Untagged
@@ -90,6 +91,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOpposite: 0
+--- !u!95 &3394726132067195038
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4438791724011544556}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 298c4610365d02744be513e56ae249a9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6840479580467815487
 GameObject:
   m_ObjectHideFlags: 0
