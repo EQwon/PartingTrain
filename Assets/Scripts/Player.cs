@@ -5,7 +5,7 @@ public class Player : MonoBehaviour, IPassenger
     [SerializeField] Station startStation;
 
     //돈
-    public int Money {
+    public float Money {
         get { return money; }
         set {
             if (value <= 0)
@@ -15,7 +15,7 @@ public class Player : MonoBehaviour, IPassenger
         }
     }
     //포만감
-    public int Satiety {
+    public float Satiety {
         get { return satiety; }
         set {
             if (value >= 100)
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour, IPassenger
         }
     }
     //수분
-    public int Moisture {
+    public float Moisture {
         get { return moisture; }
         set {
             if (value >= 100)
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour, IPassenger
         }
     }
     //위생
-    public int Hygine {
+    public float Hygine {
         get { return hygiene; }
         set {
             if(value >= 100)
@@ -51,7 +51,7 @@ public class Player : MonoBehaviour, IPassenger
         }
     }
     //위험도
-    public int Risk {
+    public float Risk {
         get { return risk; }
         set {
             if (value >= 100)
@@ -63,11 +63,11 @@ public class Player : MonoBehaviour, IPassenger
         }
     }
 
-    int money;
-    int satiety;
-    int moisture;
-    int hygiene;
-    int risk;
+    float money;
+    float satiety;
+    float moisture;
+    float hygiene;
+    float risk;
 
 
     //만남

@@ -12,8 +12,8 @@ public class GameManager : Singleton<GameManager>
 
     private TimeSpan timeSpan;
 
-    public int RiskSum => players[0].Risk + players[1].Risk;
-    public int MaxAgent => (RiskSum / 20) + 1;
+    public float RiskSum => players[0].Risk + players[1].Risk;
+    public int MaxAgent => (int)(RiskSum / 20f) + 1;
     public int NumOfAgent => agents.Count;
 
     [SerializeField] Agent agentPrefab;
@@ -173,10 +173,10 @@ public class GameManager : Singleton<GameManager>
             
             for(int i = 0; i <players.Length; i++)
             {
-                players[i].Risk -= DataInfo.lossRiskPerTime;
-                players[i].Moisture -= DataInfo.lossMoisturePerTime;
-                players[i].Hygine -= DataInfo.lossHygienePerTime;
-                players[i].Satiety -= DataInfo.lossSatietyPerTime;
+                players[i].Risk -= DataInfo.lossRiskPerTime * Time.deltaTime;
+                players[i].Moisture -= DataInfo.lossMoisturePerTime* Time.deltaTime;
+                players[i].Hygine -= DataInfo.lossHygienePerTime* Time.deltaTime;
+                players[i].Satiety -= DataInfo.lossSatietyPerTime* Time.deltaTime;
                 UIManager.instance.playerStatus.AllStatusRefresh(players[i]);
             }
 
