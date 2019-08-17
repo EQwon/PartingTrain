@@ -78,6 +78,18 @@ public class Player : MonoBehaviour, IPassenger
         Risk
     };
 
+    public enum PlayerAction
+    {
+        GetIn,
+        GetOut,
+        Opposite,
+        OnBoarding,
+        Toilet,
+        Beverage,
+        Snack,
+        Begging
+    };
+
     
     //탑승상황
     public bool isRiding;

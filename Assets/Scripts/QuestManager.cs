@@ -10,9 +10,18 @@ public struct QuestReward
 }
 
 [Serializable]
+public struct QuestTrigger
+{
+    public Player.PlayerAction action;
+    public float probability;
+}
+
+[Serializable]
 public struct Quest
 {
     public string title;
     public string description;
+    
+    public QuestTrigger trigger;
     public List<QuestReward> rewards;
 }
