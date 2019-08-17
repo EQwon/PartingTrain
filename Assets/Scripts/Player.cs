@@ -4,7 +4,7 @@ using UnityEngine;
 public class Player : MonoBehaviour, IPassenger
 {
     [SerializeField] Station startStation;
-
+    public Color playerColor;
     #region Status
     
     //돈

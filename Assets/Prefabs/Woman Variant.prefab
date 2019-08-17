@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4253920943231787914, guid: b04017028cedb534db350d7746f81ec4,
         type: 3}
       propertyPath: m_Name
-      value: Woman
+      value: Woman Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4253920943231787957, guid: b04017028cedb534db350d7746f81ec4,
         type: 3}
@@ -121,6 +121,26 @@ PrefabInstance:
         type: 3}
       propertyPath: startStation
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044335803470932161, guid: b04017028cedb534db350d7746f81ec4,
+        type: 3}
+      propertyPath: playerColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044335803470932161, guid: b04017028cedb534db350d7746f81ec4,
+        type: 3}
+      propertyPath: playerColor.g
+      value: 0.4009434
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044335803470932161, guid: b04017028cedb534db350d7746f81ec4,
+        type: 3}
+      propertyPath: playerColor.b
+      value: 0.4009434
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044335803470932161, guid: b04017028cedb534db350d7746f81ec4,
+        type: 3}
+      propertyPath: playerColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4253920943231787956, guid: b04017028cedb534db350d7746f81ec4,
         type: 3}
