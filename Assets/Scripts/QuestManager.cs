@@ -90,6 +90,7 @@ public class QuestRawWrapper
 public class QuestManager : Singleton<QuestManager>
 {
     List<Quest> quests = new List<Quest>();
+    Queue<Tuple<Quest, Player>> questQueue = new Queue<Tuple<Quest, Player>>();
     [SerializeField] Transform questPanel;
 
     Text title;
@@ -106,6 +107,27 @@ public class QuestManager : Singleton<QuestManager>
         questPanel.gameObject.SetActive(false);
         
         LoadQuestData();
+    }
+
+    void Start()
+    {
+        StartCoroutine(QuestQueueUpdator());
+    }
+
+    IEnumerator QuestQueueUpdator()
+    {
+        while (true)
+        {
+            yield return null;
+            if (questQueue.Count <= 0)
+                continue;
+
+            Tuple<Quest, Player> tuple = questQueue.Dequeue();
+            Quest quest = tuple.Item1;
+            Player player = tuple.Item2;
+            player.LaunchQuest(quest);
+            yield return LaunchUI(quest);
+        }
     }
 
     void LoadQuestData()
@@ -134,13 +156,12 @@ public class QuestManager : Singleton<QuestManager>
             if (quest.trigger.probability < random)
                 continue;
 
-            player.LaunchQuest(quest);
-            LaunchUI(quest);
+            questQueue.Enqueue(new Tuple<Quest, Player>(quest, player));
             break;
         }
     }
 
-    void LaunchUI(Quest quest)
+    IEnumerator LaunchUI(Quest quest)
     {
         title.text = quest.title;
         description.text = quest.description;
@@ -151,11 +172,6 @@ public class QuestManager : Singleton<QuestManager>
             valueChanged.text += $"{StatusEnumToString(reward.status)} {RewardValueToString(reward.status, reward.value)} ";
         }
 
-        StartCoroutine(nameof(UIUpdator));
-    }
-
-    IEnumerator UIUpdator()
-    {
         questPanel.gameObject.SetActive(true);
         yield return new WaitForSeconds(5);
         questPanel.gameObject.SetActive(false);
