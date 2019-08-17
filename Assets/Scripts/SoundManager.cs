@@ -13,8 +13,8 @@ public class SoundManager : Singleton<SoundManager>
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlaySound(AudioClip _clip)
+    public void PlaySound(AudioClip _clip, float _volume = 1f)
     {
-        audioSource.PlayOneShot(_clip);
+        audioSource.PlayOneShot(_clip, _volume);
     }
 }

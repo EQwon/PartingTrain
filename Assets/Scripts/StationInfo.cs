@@ -39,7 +39,7 @@ public class StationInfo : MonoBehaviour
 
         LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)transform);
 
-        SoundManager.instance.PlaySound(SoundManager.instance.popClip);
+        SoundManager.instance.PlaySound(SoundManager.instance.popClip, 0.5f);
     }
 
     private void OnDisable()
