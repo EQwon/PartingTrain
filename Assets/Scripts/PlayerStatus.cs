@@ -73,6 +73,16 @@ public class PlayerStatus : MonoBehaviour
                 break;
         }
     }
+    
+    public void AllStatusRefresh(Player _player)
+    {
+        int idx = _player.isMan ? 0 : 1;
+
+        statusImages[idx].images[0].fillAmount = _player.Satiety * 0.01f;
+        statusImages[idx].images[1].fillAmount = _player.Moisture * 0.01f;
+        statusImages[idx].images[2].fillAmount = _player.Hygine * 0.01f;
+        statusImages[idx].text.text = _player.Money.ToString();
+    }
 
     public void ShowStatusValue(int _idx, bool _isMan, string _eventName, RectTransform _rect)
     {
