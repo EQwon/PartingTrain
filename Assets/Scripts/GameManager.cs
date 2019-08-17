@@ -177,6 +177,7 @@ public class GameManager : Singleton<GameManager>
                 players[i].Moisture -= DataInfo.lossMoisturePerTime;
                 players[i].Hygine -= DataInfo.lossHygienePerTime;
                 players[i].Satiety -= DataInfo.lossSatietyPerTime;
+                UIManager.instance.playerStatus.AllStatusRefresh(players[i]);
             }
 
             if (agents.Count < MaxAgent)
