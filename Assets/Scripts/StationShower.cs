@@ -37,9 +37,6 @@ public class StationShower : MonoBehaviour
             return;
         }
 
-        var pos = info.GetComponent<RectTransform>().position;
-        rect.position = new Vector2(pos.x, pos.y + 60);
-
         stationNameText.text = info.stationName;
 
         actionButtons[0].gameObject.SetActive(info.canRiding);
