@@ -91,7 +91,12 @@ public class Player : MonoBehaviour, IPassenger
     {
         Init(startStation);
     }
-    
+
+    private void Update()
+    {
+        transform.rotation = Quaternion.identity;
+    }
+
     public void Init(Station station)
     {
         transform.SetParent(station.transform);
