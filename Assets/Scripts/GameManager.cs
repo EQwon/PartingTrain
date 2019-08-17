@@ -167,9 +167,9 @@ public class GameManager : Singleton<GameManager>
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f);
+            yield return null;
 
-            timeSpan += TimeSpan.FromMinutes(4);
+            timeSpan += TimeSpan.FromMinutes(Time.deltaTime * 4);
             
             for(int i = 0; i <players.Length; i++)
             {
