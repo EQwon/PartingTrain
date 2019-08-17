@@ -174,6 +174,9 @@ public class GameManager : Singleton<GameManager>
             for(int i = 0; i <players.Length; i++)
             {
                 players[i].Risk -= DataInfo.lossRiskPerTime;
+                players[i].Moisture -= DataInfo.lossMoisturePerTime;
+                players[i].Hygine -= DataInfo.lossHygienePerTime;
+                players[i].Satiety -= DataInfo.lossSatietyPerTime;
             }
 
             if (agents.Count < MaxAgent)
