@@ -18,18 +18,23 @@ public class PlayerStatus : MonoBehaviour
 
     private Text valueText;
 
-    private Button[] buttons;
+    public Button[] buttons;
+
+    private bool[] buttonsCheck;
 
     private void Start()
     {
-        buttons = GetComponentsInChildren<Button>();
+        valueText = valueObject.GetComponentInChildren<Text>();
 
-        buttons[0].onClick.AddListener(() => ShowStatusValue(true, "Satiety"));
-        buttons[1].onClick.AddListener(() => ShowStatusValue(true, "Moisture"));
-        buttons[2].onClick.AddListener(() => ShowStatusValue(true, "Hygine"));
-        buttons[3].onClick.AddListener(() => ShowStatusValue(false, "Satiety"));
-        buttons[4].onClick.AddListener(() => ShowStatusValue(false, "Moisture"));
-        buttons[5].onClick.AddListener(() => ShowStatusValue(false, "Hygine"));
+        buttons = GetComponentsInChildren<Button>();
+        buttonsCheck = new bool[buttons.Length];
+
+        buttons[0].onClick.AddListener(() => ShowStatusValue(0, true, "Satiety", buttons[0].GetComponent<RectTransform>()));
+        buttons[1].onClick.AddListener(() => ShowStatusValue(1, true, "Moisture", buttons[1].GetComponent<RectTransform>()));
+        buttons[2].onClick.AddListener(() => ShowStatusValue(2, true, "Hygine", buttons[2].GetComponent<RectTransform>()));
+        buttons[3].onClick.AddListener(() => ShowStatusValue(3, false, "Satiety", buttons[3].GetComponent<RectTransform>()));
+        buttons[4].onClick.AddListener(() => ShowStatusValue(4, false, "Moisture", buttons[4].GetComponent<RectTransform>()));
+        buttons[5].onClick.AddListener(() => ShowStatusValue(5, false, "Hygine", buttons[5].GetComponent<RectTransform>()));
     }
 
     public void StatusRefresh(string _eventName, Player _player)
@@ -50,8 +55,15 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-    public void ShowStatusValue(bool _isMan, string _eventName)
+    public void ShowStatusValue(int _idx, bool _isMan, string _eventName, RectTransform _rect)
     {
+        if (buttonsCheck[_idx])
+        {
+            valueObject.SetActive(false);
+            buttonsCheck[_idx] = false;
+            return;
+        }
+
         int idx = _isMan ? 0 : 1;
 
         switch (_eventName)
@@ -66,5 +78,9 @@ public class PlayerStatus : MonoBehaviour
                 valueText.text = GameManager.instance.players[idx].Hygine.ToString();
                 break;
         }
+
+        valueObject.GetComponent<RectTransform>().position = new Vector2(_rect.position.x, _rect.position.y - 30);
+        buttonsCheck[_idx] = true;
+        valueObject.SetActive(true);
     }
 }

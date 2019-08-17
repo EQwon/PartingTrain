@@ -87,6 +87,7 @@ public class GameManager : Singleton<GameManager>
         players[idx].Risk += DataInfo.toiletRisk;
 
         SpendTime(DataInfo.toiletTime);
+        UIManager.instance.playerStatus.StatusRefresh("Hygine", players[idx]);
 
         _finishAction?.Invoke();
     }
@@ -105,6 +106,7 @@ public class GameManager : Singleton<GameManager>
         }
 
         SpendTime(DataInfo.beverageTime);
+        UIManager.instance.playerStatus.StatusRefresh("Moisture", players[idx]);
 
         _finishAction?.Invoke();
     }
@@ -123,6 +125,7 @@ public class GameManager : Singleton<GameManager>
         }
 
         SpendTime(DataInfo.snackTime);
+        UIManager.instance.playerStatus.StatusRefresh("Satiety", players[idx]);
 
         _finishAction?.Invoke();
     }
