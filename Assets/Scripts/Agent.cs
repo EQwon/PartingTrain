@@ -44,8 +44,8 @@ public class Agent : MonoBehaviour, IPassenger
         station.Enter(this);
 
         //(필드에 존재하는 요원 수) > (필드에 있어야 하는 요원 수)라면 Destory()
-        //if (GameManager.instance.agents > GameManager.instance.MaxAgent)
-        //    GameManager.instance.RemoveAgent(this);
+        if (GameManager.instance.NumOfAgent > GameManager.instance.MaxAgent)
+            GameManager.instance.RemoveAgent(this);
 
         float randomDelay = Random.Range(8f, 10f) / (1f + GameManager.instance.RiskSum / 100f);
         Invoke(nameof(AgentGetOffDelay), randomDelay);

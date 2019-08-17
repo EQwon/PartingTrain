@@ -40,7 +40,7 @@ public class Train : MonoBehaviour
                 stationQueue = new Queue<Station>(stations);
             }
 
-            if (branchLine && (count == 0 || count == 4))
+            if (branchLine && (count == 1 || count == 5))
                 reverse = !reverse;
             
             Station nextStation = stationQueue.Dequeue();

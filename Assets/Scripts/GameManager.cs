@@ -18,6 +18,7 @@ public class GameManager : Singleton<GameManager>
 
     public int RiskSum => players[0].Risk + players[1].Risk;
     public int MaxAgent => (RiskSum / 20) + 1;
+    public int NumOfAgent => agents.Count;
 
     [SerializeField] Agent agentPrefab;
     List<Agent> agents = new List<Agent>();
