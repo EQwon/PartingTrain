@@ -73,7 +73,7 @@ public class GameManager : Singleton<GameManager>
         players[idx].Risk += DataInfo.oppositeRisk;
         players[idx].isOpposite = !players[0].isOpposite;
 
-        SpendTime(DataInfo.oppositeTime);
+        SpendTime(idx, DataInfo.oppositeTime);
 
         _finishAction?.Invoke();
     }
@@ -86,7 +86,7 @@ public class GameManager : Singleton<GameManager>
         players[idx].Hygine += DataInfo.toiletHygiene;
         players[idx].Risk += DataInfo.toiletRisk;
 
-        SpendTime(DataInfo.toiletTime);
+        SpendTime(idx, DataInfo.toiletTime);
         UIManager.instance.playerStatus.StatusRefresh("Hygine", players[idx]);
 
         _finishAction?.Invoke();
@@ -105,7 +105,7 @@ public class GameManager : Singleton<GameManager>
             players[idx].Money -= DataInfo.beverageVendingMachineMoney;
         }
 
-        SpendTime(DataInfo.beverageTime);
+        SpendTime(idx, DataInfo.beverageTime);
         UIManager.instance.playerStatus.StatusRefresh("Moisture", players[idx]);
         UIManager.instance.playerStatus.StatusRefresh("Money", players[idx]);
 
@@ -125,7 +125,7 @@ public class GameManager : Singleton<GameManager>
             players[idx].Money -= DataInfo.snackVendingMachineMoney;
         }
 
-        SpendTime(DataInfo.snackTime);
+        SpendTime(idx, DataInfo.snackTime);
         UIManager.instance.playerStatus.StatusRefresh("Satiety", players[idx]);
         UIManager.instance.playerStatus.StatusRefresh("Money", players[idx]);
 
@@ -140,7 +140,7 @@ public class GameManager : Singleton<GameManager>
         players[idx].Money += DataInfo.beggingMoney;
         players[idx].Risk += DataInfo.beggingRisk;
 
-        SpendTime(DataInfo.beggingTime);
+        SpendTime(idx, DataInfo.beggingTime);
 
         UIManager.instance.playerStatus.StatusRefresh("Money", players[idx]);
 
@@ -189,9 +189,18 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public void SpendTime(int _time)
+    public void SpendTime(int _idx, int _time)
     {
-        timeSpan += TimeSpan.FromMinutes(4 * _time);
+        StartCoroutine(BlockAction(_idx, _time));
+    }
+
+    private IEnumerator BlockAction(int _idx, int _time)
+    {
+        UIManager.instance.showers[_idx].gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(_time);
+
+        UIManager.instance.showers[_idx].gameObject.SetActive(true);
     }
 
     public void SpawnAgent()
