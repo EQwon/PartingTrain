@@ -42,53 +42,15 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     
     #region UI
     
-    private Text stationNameText;
-    private Image toiletImage;
-    private Image reversibleImage;
-    private Image beverageImage;
-    private Image snackImage;
-
-    private void Start()
-    {
-        var child = transform.GetChild(0).GetComponentsInChildren<Transform>(true);
-        stationNameText = child.FindInObjects("StationName").GetComponent<Text>();
-        toiletImage = child.FindInObjects("Toilet").GetComponent<Image>();
-        reversibleImage = child.FindInObjects("Reversible").GetComponent<Image>();
-        beverageImage = child.FindInObjects("Beverage").GetComponent<Image>();
-        snackImage = child.FindInObjects("Snack").GetComponent<Image>();
-
-        if (transform.GetChild(0).gameObject.activeSelf)
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-        }
-
-        stationNameText.text = stationName;
-        toiletImage.gameObject.SetActive(canToilet);
-        reversibleImage.gameObject.SetActive(canReversible);
-        beverageImage.gameObject.SetActive(canBeverageVending);
-        snackImage.gameObject.SetActive(canSnackVending);
-    }
-
-    private void Show()
-    {
-        transform.GetChild(0).gameObject.SetActive(true);
-    }
-
-    private void Hide()
-    {
-        transform.GetChild(0).gameObject.SetActive(false);
-    }
-
     public void OnPointerEnter(PointerEventData _data)
     {
-        GameManager.instance.ShowStationInfo(this);
-        //Show();
+        UIManager.instance.ShowStationInfo(this);
+
     }
 
     public void OnPointerExit(PointerEventData _data)
     {
-        GameManager.instance.HideStationInfo();
-        //Hide();
+        UIManager.instance.HideStationInfo();
     }
     
     #endregion
