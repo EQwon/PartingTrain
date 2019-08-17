@@ -39,6 +39,11 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         passengers.Add(passenger);
     }
 
+    public void Remove(IPassenger passenger)
+    {
+        
+    }
+
     public void Refresh()
     {
         foreach (IPassenger passenger in passengers)
