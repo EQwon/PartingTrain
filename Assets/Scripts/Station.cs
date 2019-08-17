@@ -54,6 +54,7 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void Remove(IPassenger passenger)
     {
         passengers.Remove(passenger);
+        Refresh();
     }
 
     public void Refresh()
