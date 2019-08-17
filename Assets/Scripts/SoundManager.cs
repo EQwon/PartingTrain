@@ -7,6 +7,10 @@ public class SoundManager : Singleton<SoundManager>
     private AudioSource audioSource;
 
     public AudioClip popClip;
+    public AudioClip runClip;
+    public AudioClip snackClip;
+    public AudioClip beverageClip;
+    public AudioClip beggingClip;
 
     private void Start()
     {
