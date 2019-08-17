@@ -71,8 +71,7 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        players[idx].Risk += DataInfo.oppositeRisk;
-        players[idx].isOpposite = !players[0].isOpposite;
+        players[idx].Opposite();
 
         SpendTime(DataInfo.oppositeTime);
 
