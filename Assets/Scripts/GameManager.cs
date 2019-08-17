@@ -255,7 +255,7 @@ public class GameManager : Singleton<GameManager>
             foreach (Player player in players)
             {
                 float distance = Vector3.Distance(player.transform.position, randomStation.transform.position);
-                if (distance >= 200)
+                if (distance >= 80)
                     continue;
 
                 isValid = false;
