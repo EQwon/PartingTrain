@@ -31,13 +31,13 @@ public class PlayerStatus : MonoBehaviour
         buttonsCheck = new bool[buttons.Length];
 
         buttons[0].onClick.AddListener(() => QuitAction(true));
-        buttons[1].onClick.AddListener(() => ShowStatusValue(0, true, "Satiety", buttons[0].GetComponent<RectTransform>()));
-        buttons[2].onClick.AddListener(() => ShowStatusValue(1, true, "Moisture", buttons[1].GetComponent<RectTransform>()));
-        buttons[3].onClick.AddListener(() => ShowStatusValue(2, true, "Hygine", buttons[2].GetComponent<RectTransform>()));
+        buttons[1].onClick.AddListener(() => ShowStatusValue(1, true, "Satiety", buttons[1].GetComponent<RectTransform>()));
+        buttons[2].onClick.AddListener(() => ShowStatusValue(2, true, "Moisture", buttons[2].GetComponent<RectTransform>()));
+        buttons[3].onClick.AddListener(() => ShowStatusValue(3, true, "Hygine", buttons[3].GetComponent<RectTransform>()));
         buttons[4].onClick.AddListener(() => QuitAction(false));
-        buttons[5].onClick.AddListener(() => ShowStatusValue(3, false, "Satiety", buttons[3].GetComponent<RectTransform>()));
-        buttons[6].onClick.AddListener(() => ShowStatusValue(4, false, "Moisture", buttons[4].GetComponent<RectTransform>()));
-        buttons[7].onClick.AddListener(() => ShowStatusValue(5, false, "Hygine", buttons[5].GetComponent<RectTransform>()));
+        buttons[5].onClick.AddListener(() => ShowStatusValue(5, false, "Satiety", buttons[5].GetComponent<RectTransform>()));
+        buttons[6].onClick.AddListener(() => ShowStatusValue(6, false, "Moisture", buttons[6].GetComponent<RectTransform>()));
+        buttons[7].onClick.AddListener(() => ShowStatusValue(7, false, "Hygine", buttons[7].GetComponent<RectTransform>()));
 
         SetStart();
     }
@@ -113,7 +113,9 @@ public class PlayerStatus : MonoBehaviour
                 break;
         }
 
-        valueObject.GetComponent<RectTransform>().position = new Vector2(_rect.position.x, _rect.position.y - 30);
+        
+        Debug.Log(buttons[_idx].name + " : " + _rect.position);
+        valueObject.GetComponent<RectTransform>().position = new Vector2(_rect.position.x, _rect.position.y - 50);
         buttonsCheck[_idx] = true;
         valueObject.SetActive(true);
     }
