@@ -31,15 +31,24 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void Enter(IPassenger passenger)
     {
         Debug.Log($"{passenger}이 {name} 역에 도착");
+        
+        passenger.Transform.SetParent(transform.GetChild(passenger.IsOpposite ? 1 : 0), false);
+        passenger.Transform.localPosition = Vector3.zero;
+        passenger.Transform.localRotation = Quaternion.identity;
+
         passengers.Add(passenger);
     }
 
-    void OnDrawGizmosSelected()
+    public void Refresh()
     {
-        Handles.color = Color.yellow;
-        Handles.Label(transform.position + Vector3.up * 50, name);
+        foreach (IPassenger passenger in passengers)
+        {
+            passenger.Transform.SetParent(transform.GetChild(passenger.IsOpposite ? 1 : 0), false);
+            passenger.Transform.localPosition = Vector3.zero;
+            passenger.Transform.localRotation = Quaternion.identity;
+        }
     }
-    
+
     #region UI
     
     public void OnPointerEnter(PointerEventData _data)

@@ -34,4 +34,7 @@ public static class DataInfo
     public const int beggingTime = 3;
 
     public const int lossRiskPerTime = 3;
+    public const int lossSatietyPerTime = 4;
+    public const int lossMoisturePerTime = 6;
+    public const int lossHygienePerTime = 3;
 }

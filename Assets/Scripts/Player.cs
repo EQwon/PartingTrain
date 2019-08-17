@@ -86,6 +86,7 @@ public class Player : MonoBehaviour, IPassenger
     public bool WantToGetOff { get; set; }
     public bool WantToGetIn { get; set; }
     public bool IsOpposite => isOpposite;
+    public Transform Transform => transform;
 
     private void Start()
     {
@@ -134,9 +135,6 @@ public class Player : MonoBehaviour, IPassenger
     public void GetOff(Station station)
     {
         Debug.Log($"{name}이 {station.name} 에서 열차를 내림");
-        transform.SetParent(station.transform, false);
-        transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;
         WantToGetOff = false;
         isRiding = false;
         stationInfo = station;
@@ -144,6 +142,13 @@ public class Player : MonoBehaviour, IPassenger
 
         int idx = isMan ? 0 : 1;
         UIManager.instance.showers[idx].QuitAction(stationInfo);
+    }
+
+    public void Opposite()
+    {
+        Risk += DataInfo.oppositeRisk;
+        isOpposite = !isOpposite;
+        stationInfo.Refresh();
     }
 
     public void OnBoarding(Train train, Station station)
