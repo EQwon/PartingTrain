@@ -4,6 +4,8 @@ public class Player : MonoBehaviour, IPassenger
 {
     [SerializeField] Station startStation;
 
+    #region Status
+    
     //돈
     public float Money {
         get { return money; }
@@ -68,6 +70,8 @@ public class Player : MonoBehaviour, IPassenger
     float moisture;
     float hygiene;
     float risk;
+    
+    #endregion
 
     public enum PlayerStatus
     {
@@ -148,6 +152,7 @@ public class Player : MonoBehaviour, IPassenger
 
         int idx = isMan ? 0 : 1;
         UIManager.instance.showers[idx].RideAction();
+        QuestManager.instance.TriggerQuest(PlayerAction.GetIn);
     }
 
     public void GetOff(Station station)
@@ -160,6 +165,7 @@ public class Player : MonoBehaviour, IPassenger
 
         int idx = isMan ? 0 : 1;
         UIManager.instance.showers[idx].QuitAction(stationInfo);
+        QuestManager.instance.TriggerQuest(PlayerAction.GetOut);
     }
 
     public void Opposite()
@@ -167,6 +173,7 @@ public class Player : MonoBehaviour, IPassenger
         Risk += DataInfo.oppositeRisk;
         isOpposite = !isOpposite;
         stationInfo.Refresh();
+        QuestManager.instance.TriggerQuest(PlayerAction.Opposite);
     }
 
     public void OnBoarding(Train train, Station station)
@@ -177,6 +184,63 @@ public class Player : MonoBehaviour, IPassenger
         {
             GameManager.instance.Meeting();
         }
+        QuestManager.instance.TriggerQuest(PlayerAction.OnBoarding);
+    }
+
+    public void Toilet()
+    {
+        Hygine += DataInfo.toiletHygiene;
+        Risk += DataInfo.toiletRisk;
+        QuestManager.instance.TriggerQuest(PlayerAction.Toilet);
+    }
+
+    public void BeverageVendingMachine()
+    {
+        if (CanBuy(DataInfo.beverageVendingMachineMoney))
+        {
+            Money -= DataInfo.beverageVendingMachineMoney;
+        }
+        else
+        {
+            return;
+        }
+
+        Moisture += DataInfo.beverageVendingMachineMoisture;
+        Risk += DataInfo.beverageVendingMachineRisk;
+        QuestManager.instance.TriggerQuest(PlayerAction.Beverage);
+    }
+
+    public void SnackVendingMachine()
+    {
+        if (CanBuy( DataInfo.snackVendingMachineMoney))
+        {
+            Money -= DataInfo.snackVendingMachineMoney;
+        }
+        else
+        {
+            return;
+        }
+
+        Satiety += DataInfo.snackVendingMachineSatiety;
+        Risk += DataInfo.snackVendingMachineRisk;
+        QuestManager.instance.TriggerQuest(PlayerAction.Snack);
+    }
+
+    public void Begging()
+    {
+        Money += DataInfo.beggingMoney;
+        Risk += DataInfo.beggingRisk;
+        QuestManager.instance.TriggerQuest(PlayerAction.Begging);
+    }
+    
+    bool CanBuy(int cost)
+    {
+        if(Money >= cost)
+        {
+            return true;
+        }
+
+        return false;
     }
 
 }
