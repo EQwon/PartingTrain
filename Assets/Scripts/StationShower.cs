@@ -38,7 +38,7 @@ public class StationShower : MonoBehaviour
         }
 
         var pos = info.GetComponent<RectTransform>().position;
-        rect.position = new Vector2(pos.x, pos.y + 30);
+        rect.position = new Vector2(pos.x, pos.y + 60);
 
         stationNameText.text = info.stationName;
 
