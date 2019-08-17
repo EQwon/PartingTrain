@@ -48,7 +48,7 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         foreach (IPassenger passenger in passengers)
         {
-            passenger.Transform.SetParent(transform.GetChild(passenger.IsOpposite ? 1 : 0), false);
+            passenger.Transform.SetParent(transform.GetChild(passenger.IsOpposite ? 0 : 1), false);
             passenger.Transform.localPosition = Vector3.zero;
             passenger.Transform.localRotation = Quaternion.identity;
         }
