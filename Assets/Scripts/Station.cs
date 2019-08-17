@@ -89,6 +89,8 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             circle.color = new Color(0,0,0,0);
         }
+        
+        LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)transform);
     }
 
     #region UI
