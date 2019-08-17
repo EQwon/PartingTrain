@@ -10,6 +10,11 @@ public class Agent : MonoBehaviour, IPassenger
     public bool WantToGetIn { get; set; }
     public bool IsOpposite => isOpposite;
 
+    private void Update()
+    {
+        transform.rotation = Quaternion.identity;
+    }
+
     public void Init(Station station)
     {
         transform.SetParent(station.transform);
