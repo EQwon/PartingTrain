@@ -41,7 +41,7 @@ public class QuestManager : Singleton<QuestManager>
     protected override void Awake()
     {
         base.Awake();
-        title = questPanel.Find("title").GetComponent<Text>();
+        title = questPanel.Find("Title").GetComponent<Text>();
         description = questPanel.Find("Description").GetComponent<Text>();
         valueChanged = questPanel.Find("ValueChange").GetComponent<Text>();
 
