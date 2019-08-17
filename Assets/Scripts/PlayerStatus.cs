@@ -10,7 +10,7 @@ public class PlayerStatus : MonoBehaviour
     public class StatusImage
     {
         public Image[] images = new Image[3];
-        public Text text;
+        public Text[] text = new Text[2];
     }
 
     public StatusImage[] statusImages = new StatusImage[2];
@@ -49,7 +49,8 @@ public class PlayerStatus : MonoBehaviour
             statusImages[i].images[0].fillAmount = DataInfo.playerStartSatiety * 0.01f;
             statusImages[i].images[1].fillAmount = DataInfo.playerStartMoisture * 0.01f;
             statusImages[i].images[2].fillAmount = DataInfo.playerStartHygiene * 0.01f;
-            statusImages[i].text.text = DataInfo.playerStartMoney.ToString();
+            statusImages[i].text[0].text = Mathf.FloorToInt(DataInfo.playerStartMoney).ToString();
+            statusImages[i].text[1].text = Mathf.FloorToInt(DataInfo.playerStartRisk).ToString();
         }
     }
 
@@ -69,7 +70,10 @@ public class PlayerStatus : MonoBehaviour
                 statusImages[idx].images[2].fillAmount = _player.Hygine * 0.01f;
                 break;
             case "Money":
-                statusImages[idx].text.text = _player.Money.ToString();
+                statusImages[idx].text[0].text = Mathf.FloorToInt(_player.Money).ToString();
+                break;
+            case "Risk":
+                statusImages[idx].text[1].text = Mathf.FloorToInt(_player.Risk).ToString("0");
                 break;
         }
     }
@@ -81,7 +85,8 @@ public class PlayerStatus : MonoBehaviour
         statusImages[idx].images[0].fillAmount = _player.Satiety * 0.01f;
         statusImages[idx].images[1].fillAmount = _player.Moisture * 0.01f;
         statusImages[idx].images[2].fillAmount = _player.Hygine * 0.01f;
-        statusImages[idx].text.text = _player.Money.ToString();
+        statusImages[idx].text[0].text = Mathf.FloorToInt(_player.Money).ToString();
+        statusImages[idx].text[1].text = Mathf.FloorToInt(_player.Risk).ToString();
     }
 
     public void ShowStatusValue(int _idx, bool _isMan, string _eventName, RectTransform _rect)
@@ -98,13 +103,13 @@ public class PlayerStatus : MonoBehaviour
         switch (_eventName)
         {
             case "Satiety":
-                valueText.text = GameManager.instance.players[idx].Satiety.ToString();
+                valueText.text = Mathf.FloorToInt(GameManager.instance.players[idx].Satiety).ToString();
                 break;
             case "Moisture":
-                valueText.text = GameManager.instance.players[idx].Moisture.ToString();
+                valueText.text = Mathf.FloorToInt(GameManager.instance.players[idx].Moisture).ToString();
                 break;
             case "Hygine":
-                valueText.text = GameManager.instance.players[idx].Hygine.ToString();
+                valueText.text = Mathf.FloorToInt(GameManager.instance.players[idx].Hygine).ToString();
                 break;
         }
 

@@ -88,6 +88,7 @@ public class GameManager : Singleton<GameManager>
 
         SpendTime(idx, DataInfo.toiletTime);
         UIManager.instance.playerStatus.StatusRefresh("Hygine", players[idx]);
+        UIManager.instance.playerStatus.StatusRefresh("Risk", players[idx]);
 
         _finishAction?.Invoke();
     }
@@ -111,6 +112,8 @@ public class GameManager : Singleton<GameManager>
 
         SpendTime(idx, DataInfo.beverageTime);
         UIManager.instance.playerStatus.StatusRefresh("Moisture", players[idx]);
+        UIManager.instance.playerStatus.StatusRefresh("Risk", players[idx]);
+        UIManager.instance.playerStatus.StatusRefresh("Money", players[idx]);
 
         _finishAction?.Invoke();
     }
@@ -134,6 +137,8 @@ public class GameManager : Singleton<GameManager>
 
         SpendTime(idx, DataInfo.snackTime);
         UIManager.instance.playerStatus.StatusRefresh("Satiety", players[idx]);
+        UIManager.instance.playerStatus.StatusRefresh("Risk", players[idx]);
+        UIManager.instance.playerStatus.StatusRefresh("Money", players[idx]);
 
         _finishAction?.Invoke();
     }
@@ -147,6 +152,9 @@ public class GameManager : Singleton<GameManager>
         players[idx].Risk += DataInfo.beggingRisk;
 
         SpendTime(idx, DataInfo.beggingTime);
+
+        UIManager.instance.playerStatus.StatusRefresh("Money", players[idx]);
+        UIManager.instance.playerStatus.StatusRefresh("Risk", players[idx]);
 
         _finishAction?.Invoke();
     }
