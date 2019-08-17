@@ -33,8 +33,8 @@ public static class DataInfo
     public const int snackTime = 3;
     public const int beggingTime = 3;
 
-    public const int lossRiskPerTime = 3;
-    public const int lossSatietyPerTime = 4;
-    public const int lossMoisturePerTime = 6;
-    public const int lossHygienePerTime = 3;
+    public const float lossRiskPerTime = 0.267f;
+    public const float lossSatietyPerTime = 0.4f;
+    public const float lossMoisturePerTime = 0.2f;
+    public const float lossHygienePerTime = 0.2f;
 }
