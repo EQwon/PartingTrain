@@ -29,12 +29,14 @@ public class PlayerStatus : MonoBehaviour
         buttons = GetComponentsInChildren<Button>();
         buttonsCheck = new bool[buttons.Length];
 
-        buttons[0].onClick.AddListener(() => ShowStatusValue(0, true, "Satiety", buttons[0].GetComponent<RectTransform>()));
-        buttons[1].onClick.AddListener(() => ShowStatusValue(1, true, "Moisture", buttons[1].GetComponent<RectTransform>()));
-        buttons[2].onClick.AddListener(() => ShowStatusValue(2, true, "Hygine", buttons[2].GetComponent<RectTransform>()));
-        buttons[3].onClick.AddListener(() => ShowStatusValue(3, false, "Satiety", buttons[3].GetComponent<RectTransform>()));
-        buttons[4].onClick.AddListener(() => ShowStatusValue(4, false, "Moisture", buttons[4].GetComponent<RectTransform>()));
-        buttons[5].onClick.AddListener(() => ShowStatusValue(5, false, "Hygine", buttons[5].GetComponent<RectTransform>()));
+        buttons[0].onClick.AddListener(() => QuitAction(true));
+        buttons[1].onClick.AddListener(() => ShowStatusValue(0, true, "Satiety", buttons[0].GetComponent<RectTransform>()));
+        buttons[2].onClick.AddListener(() => ShowStatusValue(1, true, "Moisture", buttons[1].GetComponent<RectTransform>()));
+        buttons[3].onClick.AddListener(() => ShowStatusValue(2, true, "Hygine", buttons[2].GetComponent<RectTransform>()));
+        buttons[4].onClick.AddListener(() => QuitAction(false));
+        buttons[5].onClick.AddListener(() => ShowStatusValue(3, false, "Satiety", buttons[3].GetComponent<RectTransform>()));
+        buttons[6].onClick.AddListener(() => ShowStatusValue(4, false, "Moisture", buttons[4].GetComponent<RectTransform>()));
+        buttons[7].onClick.AddListener(() => ShowStatusValue(5, false, "Hygine", buttons[5].GetComponent<RectTransform>()));
     }
 
     public void StatusRefresh(string _eventName, Player _player)
@@ -82,5 +84,10 @@ public class PlayerStatus : MonoBehaviour
         valueObject.GetComponent<RectTransform>().position = new Vector2(_rect.position.x, _rect.position.y - 30);
         buttonsCheck[_idx] = true;
         valueObject.SetActive(true);
+    }
+
+    public void QuitAction(bool _isMan)
+    {
+        GameManager.instance.GetOut(_isMan);
     }
 }
