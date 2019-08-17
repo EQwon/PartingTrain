@@ -38,6 +38,8 @@ public class StationInfo : MonoBehaviour
         gameObject.SetActive(true);
 
         LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)transform);
+
+        SoundManager.instance.PlaySound(SoundManager.instance.popClip);
     }
 
     private void OnDisable()
