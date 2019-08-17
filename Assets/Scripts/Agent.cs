@@ -50,7 +50,7 @@ public class Agent : MonoBehaviour, IPassenger
         float randomDelay = Random.Range(8f, 10f) / (1f + GameManager.instance.RiskSum / 100f);
         Invoke(nameof(AgentGetOffDelay), randomDelay);
 
-        int random = Random.Range(0, 1); //Random.Range(0,2)가 되어야지 0이랑 1 중 하나가 되는거 아닌가?
+        int random = Random.Range(0, 2);
         if (random == 1)
         {
             isOpposite = !isOpposite;

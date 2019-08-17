@@ -16,11 +16,13 @@
           <e p="GameManager.cs" t="Include" />
           <e p="IPassenger.cs" t="Include" />
           <e p="Player.cs" t="Include" />
+          <e p="PlayerStatus.cs" t="Include" />
           <e p="Singleton.cs" t="Include" />
           <e p="Station.cs" t="Include" />
           <e p="StationInfo.cs" t="Include" />
           <e p="StationShower.cs" t="Include" />
           <e p="Train.cs" t="Include" />
+          <e p="UIManager.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

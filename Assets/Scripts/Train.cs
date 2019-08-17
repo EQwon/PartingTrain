@@ -44,7 +44,6 @@ public class Train : MonoBehaviour
                 reverse = !reverse;
             
             Station nextStation = stationQueue.Dequeue();
-            count++;
 
             // 열차 출발 전
 
@@ -58,6 +57,11 @@ public class Train : MonoBehaviour
                     passengers.Add(passenger);
                 }
                 else if (!reverse && !passenger.IsOpposite)
+                {
+                    passenger.GetIn(this, currentStation);
+                    passengers.Add(passenger);
+                }
+                else if (branchLine && (count == 1|| count == 5))
                 {
                     passenger.GetIn(this, currentStation);
                     passengers.Add(passenger);
@@ -79,6 +83,7 @@ public class Train : MonoBehaviour
                     passengers.Remove(passenger);
                 }
             }
+            count++;
         }
 
     }
