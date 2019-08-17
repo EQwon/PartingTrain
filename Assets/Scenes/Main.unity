@@ -2387,6 +2387,11 @@ PrefabInstance:
       propertyPath: stations.Array.data[42]
       value: 
       objectReference: {fileID: 190339970}
+    - target: {fileID: 5859746960526808235, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
+        type: 3}
+      propertyPath: startStation
+      value: 
+      objectReference: {fileID: 1490953555}
     - target: {fileID: 5859746960526808234, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
         type: 3}
       propertyPath: m_RaycastTarget
@@ -7098,6 +7103,11 @@ PrefabInstance:
       propertyPath: branchLine
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5859746960526808235, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
+        type: 3}
+      propertyPath: startStation
+      value: 
+      objectReference: {fileID: 671053989}
     - target: {fileID: 5859746960526808234, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
         type: 3}
       propertyPath: m_RaycastTarget
@@ -14601,6 +14611,11 @@ PrefabInstance:
       propertyPath: branchLine
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5859746960526808235, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
+        type: 3}
+      propertyPath: startStation
+      value: 
+      objectReference: {fileID: 1454646544}
     - target: {fileID: 5859746960526808234, guid: 4b8548a5853a3bc47bdf88312a9ea18c,
         type: 3}
       propertyPath: m_RaycastTarget

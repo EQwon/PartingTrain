@@ -5,6 +5,7 @@ using UnityEngine;
 public class Train : MonoBehaviour
 {
     [SerializeField] List<Station> stations;
+    [SerializeField] Station startStation;
     [SerializeField] bool reverse;
     [SerializeField] bool branchLine;
     [SerializeField] float trainSpeed = 1f;
@@ -30,6 +31,13 @@ public class Train : MonoBehaviour
             yield break;
         
         Station currentStation = stationQueue.Dequeue();
+
+        while (startStation != currentStation)
+        {
+            if (startStation == null || stationQueue.Count <= 0)
+                yield break;
+            currentStation = stationQueue.Dequeue();
+        }
         transform.position = currentStation.transform.position;
         
         while (true)
