@@ -115,7 +115,7 @@ public class Player : MonoBehaviour, IPassenger
         station.Out(this);
 
         int idx = isMan ? 0 : 1;
-        GameManager.instance.showers[idx].RideAction();
+        UIManager.instance.showers[idx].RideAction();
     }
 
     public void GetOff(Station station)
@@ -129,7 +129,7 @@ public class Player : MonoBehaviour, IPassenger
         station.Enter(this);
 
         int idx = isMan ? 0 : 1;
-        GameManager.instance.showers[idx].QuitAction(stationInfo);
+        UIManager.instance.showers[idx].QuitAction(stationInfo);
     }
 
     public void OnBoarding(Train train, Station station)
