@@ -32,7 +32,7 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         Debug.Log($"{passenger}이 {name} 역에 도착");
         
-        passenger.Transform.SetParent(transform.GetChild(passenger.IsOpposite ? 1 : 0), false);
+        passenger.Transform.SetParent(transform.GetChild(passenger.IsOpposite ? 0 : 1), false);
         passenger.Transform.localPosition = Vector3.zero;
         passenger.Transform.localRotation = Quaternion.identity;
 
