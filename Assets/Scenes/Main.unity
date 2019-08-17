@@ -10610,7 +10610,7 @@ GameObject:
   - component: {fileID: 993053239}
   - component: {fileID: 993053238}
   m_Layer: 5
-  m_Name: EventPanel
+  m_Name: QuestPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15934,59 +15934,6 @@ MonoBehaviour:
   - {fileID: 429509075}
   agentPrefab: {fileID: 3367777758656592067, guid: 35a63379fbc2c36439618e4ba73afe43,
     type: 3}
-  quests:
-  - title: "\uB3C8 \uC783\uC5B4\uBC84\uB9BC"
-    description: 
-    trigger:
-      action: 0
-      probability: 0
-    rewards:
-    - status: 0
-      value: -100
-  - title: "\uBC30\uD0C8 \uB098\uBC84\uB9BC"
-    description: 
-    trigger:
-      action: 0
-      probability: 0
-    rewards:
-    - status: 3
-      value: -30
-  - title: "\uC694\uC6D0\uC774 \uCAD3\uC544\uC640\uC11C \uB3C4\uB9DD"
-    description: 
-    trigger:
-      action: 0
-      probability: 0
-    rewards:
-    - status: 1
-      value: -20
-    - status: 2
-      value: -30
-  - title: "\uC2DC\uBBFC\uC73C\uB85C \uBD80\uD130 \uC2E0\uACE0"
-    description: 
-    trigger:
-      action: 0
-      probability: 0
-    rewards:
-    - status: 4
-      value: 25
-  - title: "\uC9C0\uD558\uCCA0\uC5D0 \uB0C9\uBC29\uC774 \uC548\uB3FC!"
-    description: 
-    trigger:
-      action: 0
-      probability: 0
-    rewards:
-    - status: 2
-      value: -30
-  - title: "\uC0C1\uD55C \uC74C\uC2DD"
-    description: 
-    trigger:
-      action: 5
-      probability: 0
-    rewards:
-    - status: 1
-      value: 20
-    - status: 3
-      value: -30
 --- !u!4 &1583080184
 Transform:
   m_ObjectHideFlags: 0
@@ -16014,6 +15961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quests: []
+  questPanel: {fileID: 993053237}
 --- !u!1 &1586342834
 GameObject:
   m_ObjectHideFlags: 0

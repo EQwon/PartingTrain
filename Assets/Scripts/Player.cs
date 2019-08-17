@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Player : MonoBehaviour, IPassenger
 {
@@ -152,7 +153,7 @@ public class Player : MonoBehaviour, IPassenger
 
         int idx = isMan ? 0 : 1;
         UIManager.instance.showers[idx].RideAction();
-        QuestManager.instance.TriggerQuest(PlayerAction.GetIn);
+        QuestManager.instance.TriggerQuest(this, PlayerAction.GetIn);
     }
 
     public void GetOff(Station station)
@@ -165,7 +166,7 @@ public class Player : MonoBehaviour, IPassenger
 
         int idx = isMan ? 0 : 1;
         UIManager.instance.showers[idx].QuitAction(stationInfo);
-        QuestManager.instance.TriggerQuest(PlayerAction.GetOut);
+        QuestManager.instance.TriggerQuest(this, PlayerAction.GetOut);
     }
 
     public void Opposite()
@@ -173,7 +174,7 @@ public class Player : MonoBehaviour, IPassenger
         Risk += DataInfo.oppositeRisk;
         isOpposite = !isOpposite;
         stationInfo.Refresh();
-        QuestManager.instance.TriggerQuest(PlayerAction.Opposite);
+        QuestManager.instance.TriggerQuest(this, PlayerAction.Opposite);
     }
 
     public void OnBoarding(Train train, Station station)
@@ -184,14 +185,14 @@ public class Player : MonoBehaviour, IPassenger
         {
             GameManager.instance.Meeting();
         }
-        QuestManager.instance.TriggerQuest(PlayerAction.OnBoarding);
+        QuestManager.instance.TriggerQuest(this, PlayerAction.OnBoarding);
     }
 
     public void Toilet()
     {
         Hygine += DataInfo.toiletHygiene;
         Risk += DataInfo.toiletRisk;
-        QuestManager.instance.TriggerQuest(PlayerAction.Toilet);
+        QuestManager.instance.TriggerQuest(this, PlayerAction.Toilet);
     }
 
     public void BeverageVendingMachine()
@@ -207,7 +208,7 @@ public class Player : MonoBehaviour, IPassenger
 
         Moisture += DataInfo.beverageVendingMachineMoisture;
         Risk += DataInfo.beverageVendingMachineRisk;
-        QuestManager.instance.TriggerQuest(PlayerAction.Beverage);
+        QuestManager.instance.TriggerQuest(this, PlayerAction.Beverage);
     }
 
     public void SnackVendingMachine()
@@ -223,14 +224,14 @@ public class Player : MonoBehaviour, IPassenger
 
         Satiety += DataInfo.snackVendingMachineSatiety;
         Risk += DataInfo.snackVendingMachineRisk;
-        QuestManager.instance.TriggerQuest(PlayerAction.Snack);
+        QuestManager.instance.TriggerQuest(this, PlayerAction.Snack);
     }
 
     public void Begging()
     {
         Money += DataInfo.beggingMoney;
         Risk += DataInfo.beggingRisk;
-        QuestManager.instance.TriggerQuest(PlayerAction.Begging);
+        QuestManager.instance.TriggerQuest(this, PlayerAction.Begging);
     }
     
     bool CanBuy(int cost)
@@ -243,4 +244,33 @@ public class Player : MonoBehaviour, IPassenger
         return false;
     }
 
+    public void LaunchQuest(Quest quest)
+    {
+        Debug.Log($"{quest}를 실행합니다");
+
+        foreach (QuestReward reward in quest.rewards)
+        {
+            switch (reward.status)
+            {
+                case PlayerStatus.Money:
+                    Money += reward.value;
+                    break;
+                case PlayerStatus.Satiety:
+                    Satiety *= reward.value;
+                    break;
+                case PlayerStatus.Moisture:
+                    Moisture *= reward.value;
+                    break;
+                case PlayerStatus.Hygiene:
+                    Hygine *= reward.value;
+                    break;
+                case PlayerStatus.Risk:
+                    Risk *= reward.value;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+    }
+    
 }
