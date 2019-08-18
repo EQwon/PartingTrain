@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -98,13 +99,15 @@ public class Station : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     
     public void OnPointerEnter(PointerEventData _data)
     {
-        UIManager.instance.ShowStationInfo(this);
+        if(SceneManager.GetActiveScene().buildIndex != 0)
+            UIManager.instance.ShowStationInfo(this);
 
     }
 
     public void OnPointerExit(PointerEventData _data)
     {
-        UIManager.instance.HideStationInfo();
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+            UIManager.instance.HideStationInfo();
     }
     
     #endregion
