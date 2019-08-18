@@ -11,7 +11,7 @@ public class SoundManager : Singleton<SoundManager>
     public AudioClip snackClip;
     public AudioClip beverageClip;
     public AudioClip beggingClip;
-    public AudioClip eventClip;
+    public AudioClip canNotBuyClip;
 
     private void Start()
     {

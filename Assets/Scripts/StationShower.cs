@@ -118,13 +118,11 @@ public class StationShower : MonoBehaviour
     public void Beverage()
     {
         GameManager.instance.BeverageVendingMachine(man);
-        SoundManager.instance.PlaySound(SoundManager.instance.beverageClip, 1f);
     }
 
     public void Snack()
     {
         GameManager.instance.SnackVendingMachine(man);
-        SoundManager.instance.PlaySound(SoundManager.instance.snackClip, 0.7f);
     }
 
     public void Opposite()

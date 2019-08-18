@@ -30,7 +30,7 @@ public struct Quest
 
     public static Quest RawToQuest(QuestRawData raw)
     {
-        Debug.Log(raw.ToString());
+        //Debug.Log(raw.ToString());
         Quest quest = new Quest
         {
             title = raw.title,
