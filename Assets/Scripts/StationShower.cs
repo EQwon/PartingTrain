@@ -8,10 +8,13 @@ public class StationShower : MonoBehaviour
     public bool man;
 
     private Button[] actionButtons = new Button[5];
+    public Button stopButton;
+    
     private Text stationNameText;
     private RectTransform rect;
 
     public Sprite[] rideSprites;
+    public Sprite[] stopSprites;
 
     private int buttonLength;
 
@@ -29,6 +32,7 @@ public class StationShower : MonoBehaviour
         actionButtons[3].onClick.AddListener(() => Snack());
         actionButtons[4].onClick.AddListener(() => Beverage());
         actionButtons[5].onClick.AddListener(() => Begging());
+        stopButton.onClick.AddListener(() => Quit());
     }
 
     public void QuitAction(Station info)
@@ -38,6 +42,9 @@ public class StationShower : MonoBehaviour
             Debug.LogError("액션을 보여주기 위한 역 정보가 없음");
             return;
         }
+
+        stopButton.gameObject.SetActive(false);
+        stopButton.GetComponent<Image>().sprite = stopSprites[0];
 
         stationNameText.text = info.stationName;
 
@@ -59,7 +66,8 @@ public class StationShower : MonoBehaviour
             actionButtons[i].gameObject.SetActive(false);
         }
 
-        actionButtons[0].GetComponent<Image>().color = new Color(1, 1, 1);
+        actionButtons[0].GetComponent<Image>().sprite = rideSprites[0];
+        stopButton.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
 
@@ -84,18 +92,27 @@ public class StationShower : MonoBehaviour
         if (GameManager.instance.players[idx].WantToGetIn)
         {
             actionButtons[0].GetComponent<Image>().sprite = rideSprites[1];
-            //actionButtons[0].GetComponent<Image>().color = new Color(0.7f, 0.7f, 0.7f);
         }
         else
         {
             actionButtons[0].GetComponent<Image>().sprite = rideSprites[0];
-            //actionButtons[0].GetComponent<Image>().color = new Color(1, 1, 1);
         }
     }
 
     public void Quit()
     {
         GameManager.instance.GetOut(man);
+
+        int idx = man ? 0 : 1;
+
+        if (GameManager.instance.players[idx].WantToGetOff)
+        {
+            stopButton.GetComponent<Image>().sprite = stopSprites[1];
+        }
+        else
+        {
+            stopButton.GetComponent<Image>().sprite = stopSprites[0];
+        }
     }
 
     public void Beverage()

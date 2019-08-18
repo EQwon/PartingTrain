@@ -70,7 +70,8 @@ public class GameManager : Singleton<GameManager>
     {
         int idx = _isMan ? 0 : 1;
 
-        players[idx].WantToGetOff = true;
+        players[idx].WantToGetOff = !players[idx].WantToGetOff;
+        //players[idx].WantToGetOff = true;
 
         _finishAction?.Invoke();
     }
