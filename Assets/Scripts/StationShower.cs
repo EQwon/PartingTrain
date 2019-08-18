@@ -11,6 +11,8 @@ public class StationShower : MonoBehaviour
     private Text stationNameText;
     private RectTransform rect;
 
+    public Sprite[] rideSprites;
+
     private int buttonLength;
 
     void Awake()
@@ -81,11 +83,13 @@ public class StationShower : MonoBehaviour
 
         if (GameManager.instance.players[idx].WantToGetIn)
         {
-            actionButtons[0].GetComponent<Image>().color = new Color(0.7f, 0.7f, 0.7f);
+            actionButtons[0].GetComponent<Image>().sprite = rideSprites[1];
+            //actionButtons[0].GetComponent<Image>().color = new Color(0.7f, 0.7f, 0.7f);
         }
         else
         {
-            actionButtons[0].GetComponent<Image>().color = new Color(1, 1, 1);
+            actionButtons[0].GetComponent<Image>().sprite = rideSprites[0];
+            //actionButtons[0].GetComponent<Image>().color = new Color(1, 1, 1);
         }
     }
 
