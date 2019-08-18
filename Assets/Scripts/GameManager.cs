@@ -16,7 +16,7 @@ public class GameManager : Singleton<GameManager>
     bool playerMeeting = DataInfo.playerStartMeeting;
 
     public float RiskSum => players[0].Risk + players[1].Risk;
-    public int MaxAgent => (int)(RiskSum / 20f) + 1;
+    public int MaxAgent => (int)(RiskSum / 20f) + 2;
     public int NumOfAgent => agents.Count;
 
     [SerializeField] Agent agentPrefab;
