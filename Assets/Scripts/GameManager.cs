@@ -19,6 +19,8 @@ public class GameManager : Singleton<GameManager>
     public int MaxAgent => (int)(RiskSum / 20f) + 2;
     public int NumOfAgent => agents.Count;
 
+    public GameObject GameOverPanel;
+
     [SerializeField] Agent agentPrefab;
     List<Agent> agents = new List<Agent>();
     Station[] stations;
@@ -153,7 +155,7 @@ public class GameManager : Singleton<GameManager>
         {
             if (player.Satiety <= 0 || player.Moisture <= 0 || player.Hygine <= 0)
             {
-                Debug.LogError("게임 오버");
+                GameOverPanel.SetActive(true);
                 return true;
             }
         }
@@ -169,7 +171,7 @@ public class GameManager : Singleton<GameManager>
     {
         StopCoroutine(dayClockCoroutine);
         Time.timeScale = 0;
-        Debug.LogError("게임종료!");
+        GameOverPanel.SetActive(true);
     }
 
     private IEnumerator DayClockCoroutine()
@@ -182,7 +184,8 @@ public class GameManager : Singleton<GameManager>
             {
                 if (!playerMeeting)
                 {
-                    Debug.LogError("하루가 지났지만, 부부는 한번도 만나지 못했습니다");
+                    GameOverPanel.SetActive(true);
+                    Debug.Log("하루가 지났지만, 부부는 한번도 만나지 못했습니다");
                     GameEnd();
                 }
                 else
