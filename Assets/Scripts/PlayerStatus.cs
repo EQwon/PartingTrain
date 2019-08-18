@@ -86,7 +86,7 @@ public class PlayerStatus : MonoBehaviour
         statusImages[idx].images[1].fillAmount = _player.Moisture * 0.01f;
         statusImages[idx].images[2].fillAmount = _player.Hygine * 0.01f;
         statusImages[idx].text[0].text = Mathf.FloorToInt(_player.Money).ToString();
-        statusImages[idx].text[1].text = Mathf.FloorToInt(_player.Risk).ToString();
+        statusImages[idx].text[1].text = Mathf.FloorToInt(_player.Risk).ToString() + "%";
     }
 
     public void ShowStatusValue(int _idx, bool _isMan, string _eventName, RectTransform _rect)
