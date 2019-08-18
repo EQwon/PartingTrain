@@ -124,7 +124,7 @@ public class StationShower : MonoBehaviour
     public void Snack()
     {
         GameManager.instance.SnackVendingMachine(man);
-        SoundManager.instance.PlaySound(SoundManager.instance.snackClip, 0.5f);
+        SoundManager.instance.PlaySound(SoundManager.instance.snackClip, 0.7f);
     }
 
     public void Opposite()
