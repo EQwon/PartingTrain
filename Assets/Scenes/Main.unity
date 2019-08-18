@@ -6840,6 +6840,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   man: 1
+  rideSprites:
+  - {fileID: 21300000, guid: 884170105f1d53943bd7b5d9607b2adb, type: 3}
+  - {fileID: 21300000, guid: 64587fe27a89e9a4da0935bb33eae613, type: 3}
 --- !u!114 &589624087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16253,6 +16256,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   man: 0
+  rideSprites:
+  - {fileID: 21300000, guid: 884170105f1d53943bd7b5d9607b2adb, type: 3}
+  - {fileID: 21300000, guid: 64587fe27a89e9a4da0935bb33eae613, type: 3}
 --- !u!114 &1586342837
 MonoBehaviour:
   m_ObjectHideFlags: 0
