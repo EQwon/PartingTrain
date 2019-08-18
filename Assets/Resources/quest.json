@@ -4,155 +4,169 @@
 		"title": "와! 부자!",
 		"description": "부자를 만났다! 불쌍하다면서 돈을 많이 주고 갔다.",
 		"action": "Begging",
-		"probability": "10",
+		"probability": "2.5",
 		"money": "300",
 		"risk": "0",
 		"saiety": "0",
 		"moisture": "0",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "저기… 누가.. 관심 좀….",
 		"description": "열심히 구걸을 하고 다녔지만 아무도 돈을 주지 않았어…",
 		"action": "Begging",
-		"probability": "10",
+		"probability": "2.5",
 		"money": "-150",
 		"risk": "0",
 		"saiety": "0.95",
 		"moisture": "0",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "으악!! 이런 관심 말고!!",
 		"description": "너무 열심히 구걸한 나머지 구걸을 수상하게 여긴 시민이 역 사무실에 신고했다!",
 		"action": "Begging",
-		"probability": "5",
+		"probability": "1.25",
 		"money": "0",
 		"risk": "1.2",
 		"saiety": "0",
 		"moisture": "0",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "아이고! 이런…!",
 		"description": "음료수를 너무 급하게 마신 나머지 옷에 흘려버렸다.",
 		"action": "Beverage",
-		"probability": "10",
+		"probability": "2.5",
 		"money": "0",
 		"risk": "0",
 		"saiety": "0",
 		"moisture": "1.05",
-		"hygiene": "0.9"
+		"hygiene": "0.9",
+		"": ""
 	},
 	{
 		"title": "야…야…! 이거 왜 이래!",
 		"description": "자판기가 좀 낡아보였는데 결국 돈을 먹어버렸다.",
 		"action": "Beverage",
-		"probability": "10",
+		"probability": "2.5",
 		"money": "0",
 		"risk": "0",
 		"saiety": "0",
 		"moisture": "0.75",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "오! 행사 중인가봐",
 		"description": "이게 왠일? 자판기에서 음료수가 하나 더 나왔다.",
 		"action": "Beverage",
-		"probability": "5",
+		"probability": "1.25",
 		"money": "0",
 		"risk": "0",
 		"saiety": "0",
 		"moisture": "1.2",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "저..! 저거 타야해!!",
 		"description": "계단을 내려가다 열차가 오는 소리가 들려서 급하게 뛰어갔다.",
 		"action": "GetIn",
-		"probability": "10",
+		"probability": "2.5",
 		"money": "0",
-		"risk": "1.1000000000000001",
+		"risk": "1.1",
 		"saiety": "0.9",
 		"moisture": "0",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "승강장과 열차 사이 간격이 넓으므로",
 		"description": "주의를 했어야 했는데…. 넘어져서 바닥을 뒹굴었다.",
 		"action": "GetIn",
-		"probability": "8",
+		"probability": "2",
 		"money": "0",
-		"risk": "1.1000000000000001",
+		"risk": "1.1",
 		"saiety": "0",
 		"moisture": "0",
-		"hygiene": "0.9"
+		"hygiene": "0.9",
+		"": ""
 	},
 	{
 		"title": "느른 드음으 트른 믈으야…",
 		"description": "내리기 전에 타려는 사람들과의 몸 싸움 때문에 지쳤다.",
 		"action": "GetOut",
-		"probability": "15",
+		"probability": "3.75",
 		"money": "0",
 		"risk": "0",
 		"saiety": "0.8",
 		"moisture": "0",
-		"hygiene": "0.8"
+		"hygiene": "0.8",
+		"": ""
 	},
 	{
 		"title": "오늘은 운이 좋은걸!",
 		"description": "지하철에서 내리다가 떨어진 돈을 발견했다.",
 		"action": "GetOut",
-		"probability": "7",
+		"probability": "1.75",
 		"money": "200",
 		"risk": "0",
 		"saiety": "0",
 		"moisture": "0",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "예수천국 불신지옥!!",
 		"description": "지하철에서 시끄럽게 선교하는 사람 때문에 진이 다 빠졌다.",
 		"action": "OnBoarding",
-		"probability": "3",
+		"probability": "1.25",
 		"money": "0",
 		"risk": "0",
 		"saiety": "0.8",
 		"moisture": "0.9",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "설마… 들켰나?",
 		"description": "지하철에서 두리번 거리는 요원을 피해 도망치느라 힘이 빠졌다.",
 		"action": "OnBoarding",
-		"probability": "1",
+		"probability": "0.75",
 		"money": "0",
 		"risk": "1.2",
 		"saiety": "0.8",
 		"moisture": "0",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "불지옥",
 		"description": "지하철 내부 에어컨이 고장이 났다… 이 더운 여름에!",
 		"action": "OnBoarding",
-		"probability": "3",
+		"probability": "2.5",
 		"money": "0",
 		"risk": "0",
 		"saiety": "0",
 		"moisture": "0.8",
-		"hygiene": "0.8"
+		"hygiene": "0.8",
+		"": ""
 	},
 	{
 		"title": "지옥철",
 		"description": "왜 이 시간에 사람들이 이렇게 많은거야! 사람들과 부대끼느라 힘들었다.",
 		"action": "OnBoarding",
-		"probability": "2",
+		"probability": "1.25",
 		"money": "0",
 		"risk": "0",
 		"saiety": "0.9",
 		"moisture": "0.8",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "앗…! 네…. 뭐… 괜찮습니다….",
@@ -163,139 +177,152 @@
 		"risk": "0",
 		"saiety": "0",
 		"moisture": "0",
-		"hygiene": "0.7"
+		"hygiene": "0.7",
+		"": ""
 	},
 	{
 		"title": "이게… 날씨냐…",
 		"description": "걷는 것 만으로도 더운 날씨다. 너무 더워서 계단 오르기도 힘들다.",
 		"action": "Opposite",
-		"probability": "13",
+		"probability": "3.25",
 		"money": "0",
 		"risk": "0",
 		"saiety": "0",
 		"moisture": "0.8",
-		"hygiene": "0.85"
+		"hygiene": "0.85",
+		"": ""
 	},
 	{
 		"title": "아… 저 괜찮아요.",
 		"description": "반대편으로 건너가기 위해 정신없이 계단을 올라가다 신명나게 넘어져서 사람들이 다들 쳐다봤다.",
 		"action": "Opposite",
-		"probability": "10",
+		"probability": "2.5",
 		"money": "0",
 		"risk": "1.1",
 		"saiety": "0",
 		"moisture": "0",
-		"hygiene": "0.9"
+		"hygiene": "0.9",
+		"": ""
 	},
 	{
 		"title": "도를 아십니까?",
 		"description": "지나가다 인상이 좋아보인다고 붙잡혔다. 길 한복판에서 한참을 얘기 듣는 통에 사람들이 이상하게 쳐다본다.",
 		"action": "Opposite",
-		"probability": "5",
+		"probability": "1.25",
 		"money": "0",
 		"risk": "1.2",
 		"saiety": "0.9",
 		"moisture": "0",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "어라….? 어디갔지?",
 		"description": "뒷주머니에 넣어두었던 돈이 사라졌다. 어디서 잃어버린거지? 방금 전 만원 지하철인가?",
 		"action": "Opposite",
-		"probability": "10",
+		"probability": "2.5",
 		"money": "-200",
 		"risk": "1.1",
 		"saiety": "0",
 		"moisture": "0",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "신고정신",
 		"description": "얼굴을 보고 어떻게 알았는지 지나가는 시민이 신고했다.",
 		"action": "Opposite",
-		"probability": "5",
+		"probability": "1.25",
 		"money": "0",
 		"risk": "1.3",
 		"saiety": "0",
 		"moisture": "0",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "아이고.. 아까운 과자…",
 		"description": "과자 봉지가 잘 안뜯겨서 힘을 세게 주었더니 펑하고 터져버렸다…. 이런….",
 		"action": "Snack",
-		"probability": "12",
+		"probability": "3",
 		"money": "0",
 		"risk": "0",
 		"saiety": "0.9",
 		"moisture": "0",
-		"hygiene": "0.9"
+		"hygiene": "0.9",
+		"": ""
 	},
 	{
 		"title": "이 날강도야!",
 		"description": "과자 가판기가 돈만 먹고 과자를 안준다! 이런 날강도가 다 있나!",
 		"action": "Snack",
-		"probability": "9",
+		"probability": "2.25",
 		"money": "0",
 		"risk": "0",
 		"saiety": "0.8",
 		"moisture": "0",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "더블!",
 		"description": "어라? 누가 자판기에서 과자를 뽑고 안가져갔나보다. 그럼 이건 내가 먹어야지!",
 		"action": "Snack",
-		"probability": "5",
+		"probability": "1.25",
 		"money": "0",
 		"risk": "0",
 		"saiety": "1.2",
 		"moisture": "0",
-		"hygiene": "0"
+		"hygiene": "0",
+		"": ""
 	},
 	{
 		"title": "왠지 맛이 이상하더니…",
 		"description": "과자가 냄새부터 이상하더니… 상했던 것 같다. 으윽… 배 아파.",
 		"action": "Snack",
-		"probability": "10",
+		"probability": "2.5",
 		"money": "0",
 		"risk": "0",
-		"saiety": "1.1000000000000001",
+		"saiety": "1.1",
 		"moisture": "0",
-		"hygiene": "0.8"
+		"hygiene": "0.8",
+		"": ""
 	},
 	{
 		"title": "꾸르륵 꾸르륵",
 		"description": "뭐지… 뭘 잘못 먹었나… 배가 너무 아프다!",
 		"action": "Toilet",
-		"probability": "10",
+		"probability": "2.5",
 		"money": "0",
 		"risk": "0",
 		"saiety": "0",
 		"moisture": "0",
-		"hygiene": "0.8"
+		"hygiene": "0.8",
+		"": ""
 	},
 	{
 		"title": "으악! 누가 여기다 토를….",
 		"description": "왠지 바닥이 미끌미끌거린다 싶었더니… 바닥에… 우욱…",
 		"action": "Toilet",
-		"probability": "15",
+		"probability": "3.75",
 		"money": "0",
 		"risk": "0",
 		"saiety": "0",
 		"moisture": "0",
-		"hygiene": "0.9"
+		"hygiene": "0.9",
+		"": ""
 	},
 	{
 		"title": "화장실에… 휴지가….?",
 		"description": "큰 일인데… 큰일이다….",
 		"action": "Toilet",
-		"probability": "8",
+		"probability": "2",
 		"money": "0",
 		"risk": "0",
 		"saiety": "0",
 		"moisture": "0",
-		"hygiene": "0.7"
+		"hygiene": "0.7",
+		"": ""
 	}
 ]
 }
