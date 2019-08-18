@@ -25,19 +25,19 @@ public class PlayerStatus : MonoBehaviour
 
     private void Start()
     {
-        valueText = valueObject.GetComponentInChildren<Text>();
+        //valueText = valueObject.GetComponentInChildren<Text>();
 
-        buttons = GetComponentsInChildren<Button>();
-        buttonsCheck = new bool[buttons.Length];
+        //buttons = GetComponentsInChildren<Button>();
+        //buttonsCheck = new bool[buttons.Length];
 
-        buttons[0].onClick.AddListener(() => QuitAction(true));
-        buttons[1].onClick.AddListener(() => ShowStatusValue(1, true, "Satiety", buttons[1].GetComponent<RectTransform>()));
-        buttons[2].onClick.AddListener(() => ShowStatusValue(2, true, "Moisture", buttons[2].GetComponent<RectTransform>()));
-        buttons[3].onClick.AddListener(() => ShowStatusValue(3, true, "Hygine", buttons[3].GetComponent<RectTransform>()));
-        buttons[4].onClick.AddListener(() => QuitAction(false));
-        buttons[5].onClick.AddListener(() => ShowStatusValue(5, false, "Satiety", buttons[5].GetComponent<RectTransform>()));
-        buttons[6].onClick.AddListener(() => ShowStatusValue(6, false, "Moisture", buttons[6].GetComponent<RectTransform>()));
-        buttons[7].onClick.AddListener(() => ShowStatusValue(7, false, "Hygine", buttons[7].GetComponent<RectTransform>()));
+        //buttons[0].onClick.AddListener(() => QuitAction(true));
+        //buttons[1].onClick.AddListener(() => ShowStatusValue(1, true, "Satiety", buttons[1].GetComponent<RectTransform>()));
+        //buttons[2].onClick.AddListener(() => ShowStatusValue(2, true, "Moisture", buttons[2].GetComponent<RectTransform>()));
+        //buttons[3].onClick.AddListener(() => ShowStatusValue(3, true, "Hygine", buttons[3].GetComponent<RectTransform>()));
+        //buttons[4].onClick.AddListener(() => QuitAction(false));
+        //buttons[5].onClick.AddListener(() => ShowStatusValue(5, false, "Satiety", buttons[5].GetComponent<RectTransform>()));
+        //buttons[6].onClick.AddListener(() => ShowStatusValue(6, false, "Moisture", buttons[6].GetComponent<RectTransform>()));
+        //buttons[7].onClick.AddListener(() => ShowStatusValue(7, false, "Hygine", buttons[7].GetComponent<RectTransform>()));
 
         SetStart();
     }

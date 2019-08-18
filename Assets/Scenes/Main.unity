@@ -1902,7 +1902,7 @@ GameObject:
   - component: {fileID: 67034819}
   - component: {fileID: 67034821}
   m_Layer: 5
-  m_Name: Moisture
+  m_Name: ManMoisture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1915,17 +1915,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67034817}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 962797103}
-  m_Father: {fileID: 1892484668}
-  m_RootOrder: 1
+  - {fileID: 2039880984}
+  m_Father: {fileID: 1144790499}
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -106}
+  m_AnchoredPosition: {x: -805, y: -476}
   m_SizeDelta: {x: 54, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &67034819
@@ -1975,10 +1976,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 67034817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Script: {fileID: 11500000, guid: f4e36b988b7770840aa223036f2ebf50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  type: 1
+  isMan: 1
 --- !u!1 &84977157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,7 +1994,7 @@ GameObject:
   - component: {fileID: 84977159}
   - component: {fileID: 84977161}
   m_Layer: 5
-  m_Name: Satiety
+  m_Name: WomanSatiety
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2005,17 +2007,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84977157}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 118578797}
-  m_Father: {fileID: 537149808}
-  m_RootOrder: 0
+  - {fileID: 706556582}
+  m_Father: {fileID: 1144790499}
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -73, y: -78}
+  m_AnchoredPosition: {x: 732, y: -448}
   m_SizeDelta: {x: 54, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &84977159
@@ -2065,10 +2068,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 84977157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Script: {fileID: 11500000, guid: f4e36b988b7770840aa223036f2ebf50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  type: 0
+  isMan: 0
 --- !u!1 &116594603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,12 +2085,12 @@ GameObject:
   - component: {fileID: 116594606}
   - component: {fileID: 116594605}
   m_Layer: 5
-  m_Name: HygineValue
+  m_Name: Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &116594604
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2094,17 +2098,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116594603}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2031245587}
-  m_Father: {fileID: 537149808}
-  m_RootOrder: 6
+  m_Father: {fileID: 574541892}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 73, y: -10}
+  m_AnchoredPosition: {x: 0, y: 68}
   m_SizeDelta: {x: 120, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &116594605
@@ -3247,12 +3251,12 @@ GameObject:
   - component: {fileID: 169086261}
   - component: {fileID: 169086260}
   m_Layer: 5
-  m_Name: SatietyValue
+  m_Name: Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &169086259
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3265,12 +3269,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1001130188}
-  m_Father: {fileID: 1892484668}
-  m_RootOrder: 4
+  m_Father: {fileID: 1808942054}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -73, y: -10}
+  m_AnchoredPosition: {x: 0, y: 68}
   m_SizeDelta: {x: 120, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &169086260
@@ -7435,13 +7439,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 84977158}
-  - {fileID: 619470023}
-  - {fileID: 574541892}
   - {fileID: 555244856}
-  - {fileID: 706556582}
-  - {fileID: 732506150}
-  - {fileID: 116594604}
   m_Father: {fileID: 584695198}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7753,7 +7751,7 @@ RectTransform:
   - {fileID: 317752508}
   - {fileID: 1425349422}
   m_Father: {fileID: 537149808}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7829,7 +7827,7 @@ GameObject:
   - component: {fileID: 574541893}
   - component: {fileID: 574541895}
   m_Layer: 5
-  m_Name: Hygine
+  m_Name: WomanHygine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7842,17 +7840,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574541891}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 416715608}
-  m_Father: {fileID: 537149808}
-  m_RootOrder: 2
+  - {fileID: 116594604}
+  m_Father: {fileID: 1144790499}
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 73, y: -78}
+  m_AnchoredPosition: {x: 878, y: -448}
   m_SizeDelta: {x: 54, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &574541893
@@ -7902,10 +7901,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 574541891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Script: {fileID: 11500000, guid: f4e36b988b7770840aa223036f2ebf50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  type: 2
+  isMan: 0
 --- !u!1 &582355502
 GameObject:
   m_ObjectHideFlags: 0
@@ -8713,7 +8713,7 @@ GameObject:
   - component: {fileID: 619470024}
   - component: {fileID: 619470026}
   m_Layer: 5
-  m_Name: Moisture
+  m_Name: WomanMoisture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8726,17 +8726,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619470022}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2033915778}
-  m_Father: {fileID: 537149808}
-  m_RootOrder: 1
+  - {fileID: 732506150}
+  m_Father: {fileID: 1144790499}
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -106}
+  m_AnchoredPosition: {x: 805, y: -476}
   m_SizeDelta: {x: 54, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &619470024
@@ -8786,10 +8787,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 619470022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Script: {fileID: 11500000, guid: f4e36b988b7770840aa223036f2ebf50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  type: 1
+  isMan: 0
 --- !u!1 &636439564
 GameObject:
   m_ObjectHideFlags: 0
@@ -9912,12 +9914,12 @@ GameObject:
   - component: {fileID: 706556584}
   - component: {fileID: 706556583}
   m_Layer: 5
-  m_Name: SatietyValue
+  m_Name: Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &706556582
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9925,17 +9927,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 706556581}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1824342302}
-  m_Father: {fileID: 537149808}
-  m_RootOrder: 4
+  m_Father: {fileID: 84977158}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -73, y: -10}
+  m_AnchoredPosition: {x: 0, y: 68}
   m_SizeDelta: {x: 120, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706556583
@@ -10233,12 +10235,12 @@ GameObject:
   - component: {fileID: 732506152}
   - component: {fileID: 732506151}
   m_Layer: 5
-  m_Name: MoistureValue
+  m_Name: Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &732506150
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10246,17 +10248,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732506149}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1983688}
-  m_Father: {fileID: 537149808}
-  m_RootOrder: 5
+  m_Father: {fileID: 619470023}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40}
+  m_AnchoredPosition: {x: 0, y: 66}
   m_SizeDelta: {x: 120, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &732506151
@@ -11394,7 +11396,7 @@ GameObject:
   - component: {fileID: 811335131}
   - component: {fileID: 811335133}
   m_Layer: 5
-  m_Name: Hygine
+  m_Name: ManHygine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11407,17 +11409,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811335129}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 373065865}
-  m_Father: {fileID: 1892484668}
-  m_RootOrder: 2
+  - {fileID: 1801033111}
+  m_Father: {fileID: 1144790499}
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 73, y: -78}
+  m_AnchoredPosition: {x: -732, y: -448}
   m_SizeDelta: {x: 54, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &811335131
@@ -11467,10 +11470,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 811335129}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Script: {fileID: 11500000, guid: f4e36b988b7770840aa223036f2ebf50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  type: 2
+  isMan: 1
 --- !u!1 &818605522
 GameObject:
   m_ObjectHideFlags: 0
@@ -12691,7 +12695,7 @@ RectTransform:
   - {fileID: 1354479749}
   - {fileID: 1680307045}
   m_Father: {fileID: 1892484668}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14881,6 +14885,12 @@ RectTransform:
   - {fileID: 1586342835}
   - {fileID: 1814308340}
   - {fileID: 805022192}
+  - {fileID: 1808942054}
+  - {fileID: 67034818}
+  - {fileID: 811335130}
+  - {fileID: 84977158}
+  - {fileID: 619470023}
+  - {fileID: 574541892}
   m_Father: {fileID: 284869349}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19970,12 +19980,12 @@ GameObject:
   - component: {fileID: 1801033113}
   - component: {fileID: 1801033112}
   m_Layer: 5
-  m_Name: HygineValue
+  m_Name: Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1801033111
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19988,12 +19998,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1798186472}
-  m_Father: {fileID: 1892484668}
-  m_RootOrder: 6
+  m_Father: {fileID: 811335130}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 73, y: -10}
+  m_AnchoredPosition: {x: 0, y: 68}
   m_SizeDelta: {x: 120, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1801033112
@@ -20065,7 +20075,7 @@ GameObject:
   - component: {fileID: 1808942055}
   - component: {fileID: 1808942057}
   m_Layer: 5
-  m_Name: Satiety
+  m_Name: ManSatiety
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20078,17 +20088,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808942053}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 748888413}
-  m_Father: {fileID: 1892484668}
-  m_RootOrder: 0
+  - {fileID: 169086259}
+  m_Father: {fileID: 1144790499}
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -73, y: -78}
+  m_AnchoredPosition: {x: -878, y: -448}
   m_SizeDelta: {x: 54, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808942055
@@ -20138,10 +20149,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1808942053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Script: {fileID: 11500000, guid: f4e36b988b7770840aa223036f2ebf50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  type: 0
+  isMan: 1
 --- !u!1 &1814308339
 GameObject:
   m_ObjectHideFlags: 0
@@ -21514,13 +21526,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1808942054}
-  - {fileID: 67034818}
-  - {fileID: 811335130}
   - {fileID: 995955549}
-  - {fileID: 169086259}
-  - {fileID: 2039880984}
-  - {fileID: 1801033111}
   m_Father: {fileID: 584695198}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23017,12 +23023,12 @@ GameObject:
   - component: {fileID: 2039880986}
   - component: {fileID: 2039880985}
   m_Layer: 5
-  m_Name: MoistureValue
+  m_Name: Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2039880984
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23035,12 +23041,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 506615651}
-  m_Father: {fileID: 1892484668}
-  m_RootOrder: 5
+  m_Father: {fileID: 67034818}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40}
+  m_AnchoredPosition: {x: 0, y: 66}
   m_SizeDelta: {x: 120, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2039880985
