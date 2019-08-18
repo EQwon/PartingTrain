@@ -11,7 +11,7 @@ public class Player : MonoBehaviour, IPassenger
     public float Money {
         get { return money; }
         set {
-            if (value <= 0)
+            if (value < 0)
                 value = 0;
             else
                 money = value;
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour, IPassenger
         set {
             if (value >= 100)
                 satiety = value;
-            else if (value <= 0)
+            else if (value < 0)
                 satiety = 0;
             else
                 satiety = value;
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour, IPassenger
         set {
             if (value >= 100)
                 moisture = 100;
-            else if (value <= 0)
+            else if (value < 0)
                 moisture = 0;
             else
                 moisture = value;
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour, IPassenger
         set {
             if(value >= 100)
                 hygiene = 100;
-            else if (value <= 0)
+            else if (value < 0)
                 hygiene = 0;
             else
                 hygiene = value;
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour, IPassenger
         set {
             if (value >= 100)
             { risk = 100; }
-            else if (value <= 0)
+            else if (value < 0)
             { risk = 0; }
             else
             { risk = value; }
@@ -200,9 +200,11 @@ public class Player : MonoBehaviour, IPassenger
         if (CanBuy(DataInfo.beverageVendingMachineMoney))
         {
             Money -= DataInfo.beverageVendingMachineMoney;
+            SoundManager.instance.PlaySound(SoundManager.instance.beverageClip, 1f);
         }
         else
         {
+            SoundManager.instance.PlaySound(SoundManager.instance.canNotBuyClip);
             return;
         }
 
@@ -216,9 +218,12 @@ public class Player : MonoBehaviour, IPassenger
         if (CanBuy( DataInfo.snackVendingMachineMoney))
         {
             Money -= DataInfo.snackVendingMachineMoney;
+            SoundManager.instance.PlaySound(SoundManager.instance.snackClip, 0.7f);
+            Debug.Log("사짐");
         }
         else
         {
+            SoundManager.instance.PlaySound(SoundManager.instance.canNotBuyClip);
             return;
         }
 

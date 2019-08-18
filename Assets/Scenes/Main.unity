@@ -11354,7 +11354,7 @@ MonoBehaviour:
   snackClip: {fileID: 8300000, guid: e7aee55d24939d94c882202eb60472b9, type: 3}
   beverageClip: {fileID: 8300000, guid: 9bdb4a9b5cf088d45830b028726f49ee, type: 3}
   beggingClip: {fileID: 8300000, guid: 848078cb307862041af3acc7bef9ace2, type: 3}
-  eventClip: {fileID: 0}
+  canNotBuyClip: {fileID: 8300000, guid: 4453c7114f65b8b4dada4e810902f4ed, type: 3}
 --- !u!4 &719484222
 Transform:
   m_ObjectHideFlags: 0
