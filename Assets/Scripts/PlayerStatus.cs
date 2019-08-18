@@ -61,13 +61,13 @@ public class PlayerStatus : MonoBehaviour
         switch (_eventName)
         {
             case "Satiety":
-                statusImages[idx].images[0].fillAmount = _player.Satiety * 0.01f;
+                statusImages[idx].images[0].fillAmount = (1 - _player.Satiety * 0.01f);
                 break;
             case "Moisture":
-                statusImages[idx].images[1].fillAmount = _player.Moisture * 0.01f;
+                statusImages[idx].images[1].fillAmount = (1 - _player.Moisture * 0.01f);
                 break;
             case "Hygine":
-                statusImages[idx].images[2].fillAmount = _player.Hygine * 0.01f;
+                statusImages[idx].images[2].fillAmount = (1 - _player.Hygine * 0.01f);
                 break;
             case "Money":
                 statusImages[idx].text[0].text = Mathf.FloorToInt(_player.Money).ToString();
@@ -82,9 +82,9 @@ public class PlayerStatus : MonoBehaviour
     {
         int idx = _player.isMan ? 0 : 1;
 
-        statusImages[idx].images[0].fillAmount = _player.Satiety * 0.01f;
-        statusImages[idx].images[1].fillAmount = _player.Moisture * 0.01f;
-        statusImages[idx].images[2].fillAmount = _player.Hygine * 0.01f;
+        statusImages[idx].images[0].fillAmount = (1 - _player.Satiety * 0.01f);
+        statusImages[idx].images[1].fillAmount = (1 - _player.Moisture * 0.01f);
+        statusImages[idx].images[2].fillAmount = (1 - _player.Hygine * 0.01f);
         statusImages[idx].text[0].text = Mathf.FloorToInt(_player.Money).ToString();
         statusImages[idx].text[1].text = Mathf.FloorToInt(_player.Risk).ToString();
     }
